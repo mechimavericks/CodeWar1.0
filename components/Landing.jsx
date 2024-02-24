@@ -55,16 +55,16 @@ function Landing() {
         <div className="flex gap-5 flex-wrap justify-center">
           <button
             type="button"
-            className="relative px-6 py-3 overflow-hidden font-semibold rounded dark:bg-gray-100 dark:text-gray-900 hover:bg-black duration-300 hover:text-white"
+            className="relative px-6 py-3 px-5 overflow-hidden font-semibold rounded dark:bg-blue-200 bg-blue-800 dark:text-gray-900 text-white  hover:bg-black duration-300 hover:text-white"
           >
             Register Opens
-            <span className="absolute top-0 right-0 px-3 py-1 text-xs tracki text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 dark:bg-violet-400">
+            <span className="absolute top-0 right-0 px-3 py-1 text-xs tracki text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full translate-x-1/3 dark:bg-violet-400 bg-violet-600 p-5">
               Soon
             </span>
           </button>
           <button
             type="button"
-            className="px-6 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 hover:bg-white duration-300 hover:text-black"
+            className="px-6 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100 dark:bg-transparent bg-gray-100 dark:hover:bg-white hover:bg-transparent hover:text-white  duration-300 dark:hover:text-black"
           >
             Find Us On Facebook
           </button>

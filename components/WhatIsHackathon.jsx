@@ -7,7 +7,7 @@ function WhatIsHackathon() {
         <h2 className="mb-8 text-4xl font-bold leading-tight text-center">
           What is a Hackathon?
         </h2>
-        <p className="mb-6 text-lg text-center text-gray-200">
+        <p className="mb-6 text-lg text-center ">
           A hackathon is an event where individuals from diverse backgrounds
           come together to collaboratively develop innovative solutions to
           real-world problems within a constrained timeframe, typically ranging

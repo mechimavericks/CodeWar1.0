@@ -5,7 +5,7 @@ function Prizes() {
     <div>
       <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
         <div className="flex items-center flex-col gap-5 justify-center w-full p-5">
-          <h1 className="sm:text-5xl text-3xl font-bold text-white">
+          <h1 className="sm:text-5xl text-3xl font-bold dark:text-white">
             Prizes And Awards
           </h1>
           <p className="text-center">
