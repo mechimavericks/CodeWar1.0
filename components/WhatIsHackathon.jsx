@@ -49,10 +49,10 @@ function WhatIsHackathon() {
                 To participate in a hackathon, you typically need to register
                 for the event, either individually or as part of a team. Many
                 hackathons are open to people with various skill levels,
-                including beginners, so don't hesitate to join even if you're
-                new to coding. Keep an eye on hackathon announcements on social
-                media, community forums, and dedicated platforms for hackathon
-                listings.
+                including beginners, so don&apos;t hesitate to join even if
+                you&apos;re new to coding. Keep an eye on hackathon
+                announcements on social media, community forums, and dedicated
+                platforms for hackathon listings.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -60,12 +60,12 @@ function WhatIsHackathon() {
                 What should I bring to a hackathon?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                When attending a hackathon, it's essential to bring your laptop
-                or computer, chargers, any necessary software or development
-                tools, and any personal items you might need for the duration of
-                the event. It's also a good idea to bring snacks, water, and
-                comfortable clothing, as hackathons can be intense and may last
-                for several hours or days.
+                When attending a hackathon, it&apos;s essential to bring your
+                laptop or computer, chargers, any necessary software or
+                development tools, and any personal items you might need for the
+                duration of the event. It&apos;s also a good idea to bring
+                snacks, water, and comfortable clothing, as hackathons can be
+                intense and may last for several hours or days.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -76,9 +76,9 @@ function WhatIsHackathon() {
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
                 Most hackathons allow both individual participants and teams.
                 Some hackathons even facilitate team formation on-site, while
-                others require pre-formed teams. Check the hackathon's rules and
-                guidelines to determine whether you can participate individually
-                or need to join or form a team.
+                others require pre-formed teams. Check the hackathon&apos;s
+                rules and guidelines to determine whether you can participate
+                individually or need to join or form a team.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -91,9 +91,9 @@ function WhatIsHackathon() {
                 be advantageous, many hackathons also encourage participation
                 from individuals with diverse skill sets, including project
                 management, marketing, and domain expertise related to the
-                hackathon's theme. Some hackathons may have specific
-                requirements or restrictions, so it's essential to review the
-                event details before registering.
+                hackathon&apos;s theme. Some hackathons may have specific
+                requirements or restrictions, so it&apos;s essential to review
+                the event details before registering.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -101,14 +101,14 @@ function WhatIsHackathon() {
                 How can I find a team to join for a hackathon?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                If you're participating in a hackathon that allows individual
-                registration but you'd like to join a team, there are several
-                ways to find teammates. Many hackathons host team formation
-                sessions at the beginning of the event, where participants can
-                pitch ideas and form teams. Additionally, you can use online
-                platforms and social media to connect with other participants
-                before the hackathon starts. Some hackathons also have dedicated
-                channels or forums for team formation.
+                If you&apos;re participating in a hackathon that allows
+                individual registration but you&apos;d like to join a team,
+                there are several ways to find teammates. Many hackathons host
+                team formation sessions at the beginning of the event, where
+                participants can pitch ideas and form teams. Additionally, you
+                can use online platforms and social media to connect with other
+                participants before the hackathon starts. Some hackathons also
+                have dedicated channels or forums for team formation.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -116,28 +116,29 @@ function WhatIsHackathon() {
                 What should I bring with me to a hackathon as part of a team?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                If you're participating in a hackathon as part of a team, it's
-                essential to coordinate with your teammates to ensure you have
-                all the necessary equipment and resources. Each team member
-                should bring their laptop or computer, chargers, any required
-                software or development tools, and personal items. It's also a
-                good idea for teams to discuss and plan their project idea,
-                goals, and division of tasks before the hackathon begins.
+                If you&apos;re participating in a hackathon as part of a team,
+                it&apos;s essential to coordinate with your teammates to ensure
+                you have all the necessary equipment and resources. Each team
+                member should bring their laptop or computer, chargers, any
+                required software or development tools, and personal items.
+                It&apos;s also a good idea for teams to discuss and plan their
+                project idea, goals, and division of tasks before the hackathon
+                begins.
               </p>
             </details>
             <details className="w-full border rounded-lg">
               <summary className="px-4 py-6 focus:outline-none focus-visible:ri">
-                Can I work on a project that I've already started before the
-                hackathon?
+                Can I work on a project that I&apos;ve already started before
+                the hackathon?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
                 Most hackathons encourage participants to work on new projects
-                or ideas during the event. While it's usually acceptable to use
-                pre-existing libraries, frameworks, or assets, the core concept
-                and development should occur during the hackathon timeframe. Be
-                sure to review the hackathon's rules regarding project
-                eligibility and any specific requirements related to
-                pre-existing work.
+                or ideas during the event. While it&apos;s usually acceptable to
+                use pre-existing libraries, frameworks, or assets, the core
+                concept and development should occur during the hackathon
+                timeframe. Be sure to review the hackathon&apos;s rules
+                regarding project eligibility and any specific requirements
+                related to pre-existing work.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -149,10 +150,10 @@ function WhatIsHackathon() {
                 criteria, which may include creativity, technical complexity,
                 user experience, potential impact, and presentation quality.
                 Judges often evaluate both the final product or prototype and
-                the process followed by the team during development. It's
+                the process followed by the team during development. It&apos;s
                 essential for teams to communicate their ideas effectively,
-                demonstrate their project's functionality, and highlight any
-                innovative features or solutions.
+                demonstrate their project&apos;s functionality, and highlight
+                any innovative features or solutions.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -161,13 +162,13 @@ function WhatIsHackathon() {
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
                 The fate of hackathon projects varies depending on the event and
-                the team's goals. Some projects may continue to be developed
-                after the hackathon, either by the same team or by joining
-                forces with other collaborators. In some cases, projects may be
-                submitted to startup accelerators, incubators, or competitions
-                for further support and funding. However, not all projects
-                progress beyond the hackathon stage, and some may remain as
-                valuable learning experiences for the participants.
+                the team&apos;s goals. Some projects may continue to be
+                developed after the hackathon, either by the same team or by
+                joining forces with other collaborators. In some cases, projects
+                may be submitted to startup accelerators, incubators, or
+                competitions for further support and funding. However, not all
+                projects progress beyond the hackathon stage, and some may
+                remain as valuable learning experiences for the participants.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -179,10 +180,11 @@ function WhatIsHackathon() {
                 collaborate with others, and embrace the opportunity to learn
                 and experiment. Take advantage of workshops, mentorship
                 opportunities, and networking sessions offered during the event.
-                Don't be afraid to step out of your comfort zone, ask questions,
-                and seek feedback from mentors and fellow participants. Remember
-                that hackathons are as much about the journey as they are about
-                the final outcome, so enjoy the process and have fun!
+                Don&apos;t be afraid to step out of your comfort zone, ask
+                questions, and seek feedback from mentors and fellow
+                participants. Remember that hackathons are as much about the
+                journey as they are about the final outcome, so enjoy the
+                process and have fun!
               </p>
             </details>
           </div>

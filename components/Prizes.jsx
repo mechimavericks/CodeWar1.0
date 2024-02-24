@@ -10,7 +10,7 @@ function Prizes() {
           </h1>
           <p className="text-center">
             Please note that, the prizes and awards are subjected to change as
-            per the event's requirements.
+            per the event&apos;s requirements.
           </p>
         </div>
 
