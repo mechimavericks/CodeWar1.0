@@ -6,6 +6,8 @@ import Timeline from "@/components/Timeline";
 import WhatIsHackathon from "@/components/WhatIsHackathon";
 import Image from "next/image";
 
+
+
 export default function Home() {
   return (
     <>
