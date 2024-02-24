@@ -24,6 +24,6 @@ hehe
 
 ## Contact
 
-If you have any questions or suggestions regarding Mechi Hacks, feel free to reach out to us at [mechihacks@example.com](mailto:mechihacks@example.com).
+If you have any questions or suggestions regarding Mechi Hacks, feel free to reach out to us at [mechigeeks@gmail.com](mailto:mechigeeks@gmail.com).
 
 Happy hacking!
