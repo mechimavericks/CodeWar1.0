@@ -10,7 +10,7 @@ Mechi Hacks is an open-source hackathon event organized by Mechi Multiple Campus
 
 To get started with Mechi Hacks, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/mechihacks/mechihacks.git`
+1. Clone the repository: `git clone https://github.com/meprazhant/mechihacks.git`
 2. Install the necessary dependencies: `npm install`
 3. Explore the project and its documentation to understand the structure and guidelines.
 
