@@ -1,8 +1,24 @@
-import React from "react";
+'use client'
+import React, {useState} from "react";
+import { useRef, useEffect } from "react";
+import {  motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function Prizes() {
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  // useEffect(() => {
+  //   if (inView) {
+  //     controls.start("visible");
+  //   }else{
+  //     controls.start("hidden");
+  //   }
+  // }, [controls, inView]);
+
+
   return (
-    <div>
+    <div ref={ref}>
       <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
         <div className="flex items-center flex-col gap-5 justify-center w-full p-5">
           <h1 className="sm:text-5xl text-3xl font-bold dark:text-white">
@@ -14,9 +30,14 @@ function Prizes() {
           </p>
         </div>
 
-        <div className="container mx-auto p-4 sm:p-10">
+        <div className="container mx-auto p-4 sm:p-10 overflow-hidden">
           <div className="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
-            <div className="relative z-0 flex flex-col items-center p-8 border rounded-md">
+           {(inView) && <motion.div
+            initial={{ opacity: 0, x: -200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            hidden={{opacity:0, x: -200}}
+             className="relative z-0 flex flex-col items-center p-8 border rounded-md">
               <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg dark:bg-violet-400 dark:text-gray-900">
                 Second Runner Up
               </span>
@@ -76,8 +97,13 @@ function Prizes() {
                   <span>Stickers and T-shirts</span>
                 </li>
               </ul>
-            </div>
-            <div className="relative flex flex-col items-center p-8 border-2 rounded-md dark:border-violet-400 dark:bg-gray-800">
+            </motion.div>}
+           {(inView) && <motion.div
+            initial={{ opacity: 0, y: 200 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            hidden={{opacity:0, y: 200}}
+           className="relative flex flex-col items-center p-8 border-2 rounded-md dark:border-violet-400 dark:bg-gray-800">
               <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-gradient-to-br from-yellow-300 to-yellow-600 dark:text-gray-900">
                 Mechi Hacks Winner
               </span>
@@ -139,8 +165,13 @@ function Prizes() {
                   <span>Stickers and T-shirts</span>
                 </li>
               </ul>
-            </div>
-            <div className="relative z-0 flex flex-col items-center p-8 border rounded-md dark:bg-gray-800">
+            </motion.div>}
+           {(inView) && <motion.div
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            hidden={{opacity:0, x: 200}}
+           className="relative z-0 flex flex-col items-center p-8 border rounded-md dark:bg-gray-800">
               <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-gradient-to-br from-gray-300 to-gray-600 dark:text-gray-900">
                 First Runner Up
               </span>
@@ -202,7 +233,7 @@ function Prizes() {
                   <span>Stickers and T-shirts</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>}
           </div>
         </div>
       </section>
