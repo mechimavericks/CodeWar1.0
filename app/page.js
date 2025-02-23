@@ -12,7 +12,7 @@ export default function Home() {
       <Landing />
       <Timeline />
       <Prizes />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <WhatIsHackathon />
       <FAQS />
       <Footer />
