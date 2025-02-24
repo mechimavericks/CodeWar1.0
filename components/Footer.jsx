@@ -20,12 +20,17 @@ function Footer() {
           </div>
           <ul className="flex flex-wrap pl-3 space-x-4 sm:space-x-8">
             <li>
-              <a rel="noopener noreferrer" href="#">
-                Instagram
+              <a rel="noopener noreferrer" href="https://www.linkedin.com/company/mechimavericks/" target="_blank">
+                LinkedIn
               </a>
             </li>
             <li>
-              <a rel="noopener noreferrer" href="#">
+              <a rel="noopener noreferrer" href="https://discord.gg/tSeEdunV8c" target="_blank">
+                Discord
+              </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="https://www.facebook.com/mechimavericks" target="_blank">
                 Facebook
               </a>
             </li>
