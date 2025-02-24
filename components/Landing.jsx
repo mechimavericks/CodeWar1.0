@@ -81,6 +81,7 @@ function Landing() {
             type="button"
             className="relative px-6 py-3 overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
             onClick={()=>{
+
               window.open("https://docs.google.com/document/d/1wC_Kpgs119-MnfYq1v_2W5A7xn8OFAraA8szXcNnykU/edit?tab=t.0#heading=h.9bs2qovp1s7s", "_blank")
             }
             }
@@ -91,7 +92,12 @@ function Landing() {
             type="button"
             className="px-6 py-3 font-semibold duration-300 bg-gray-100 border rounded dark:border-gray-100 dark:text-gray-100 dark:bg-transparent dark:hover:bg-white hover:bg-transparent hover:text-white dark:hover:text-black"
             onClick={()=>{
-              window.open("https://www.facebook.com/mechimavericks", "_blank")
+              url = window.location.href;
+              if(url.includes("bcaassociation")){
+                windows.open("https://www.facebook.com/bcaassociation", "_blank")
+              }else{
+                window.open("https://www.facebook.com/mechimavericks", "_blank")
+              }
             }}
           >
             Find Us On Facebook
