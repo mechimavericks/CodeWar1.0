@@ -1,29 +1,43 @@
-# Mechi Hacks
+# CodeWar 1.0
 
-Welcome to the Mechi Hacks repository!
+Welcome to the CodeWar 1.0 repository!
 
 ## About
 
-Mechi Hacks is an open-source hackathon event organized by Mechi Multiple Campus. This event brings together students from various disciplines to collaborate, innovate, and build amazing projects.
+CodeWar 1.0 is a competitive coding event organized by Mechi Mavericks in collaboration with the BCA Association of Mechi Multiple Campus. This event aims to bring together students from various disciplines to collaborate, innovate, and showcase their coding skills.
 
 ## Getting Started
 
-To get started with Mechi Hacks, follow these steps:
+To get started with CodeWar 1.0, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/meprazhant/mechihacks.git`
-2. Install the necessary dependencies: `npm install`
-3. Explore the project and its documentation to understand the structure and guidelines.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/mechimavericks/CodeWar1.0.git
+   ```
+
+2. **Install the necessary dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   The development server will start at `http://localhost:3000`.
+
+4. **Explore the project**: Familiarize yourself with the project structure and guidelines to understand how to contribute effectively.
 
 ## Contributing
 
-We welcome contributions from everyone! If you'd like to contribute to Mechi Hacks, please follow our [contribution guidelines](CONTRIBUTING.md).
+We welcome contributions from everyone! If you'd like to contribute to CodeWar 1.0, please follow our [contribution guidelines](https://github.com/mechimavericks/.github/blob/main/profile/Contribution.md).
 
 ## License
 
-hehe
+This project is licensed under the MIT License.
 
 ## Contact
 
-If you have any questions or suggestions regarding Mechi Hacks, feel free to reach out to us at [mechigeeks@gmail.com](mailto:mechigeeks@gmail.com).
+If you have any questions or suggestions regarding CodeWar 1.0, feel free to reach out to us at [mechimavericks@gmail.com](mailto:mechimavericks@gmail.com).
 
-Happy hacking!
+Happy coding! 

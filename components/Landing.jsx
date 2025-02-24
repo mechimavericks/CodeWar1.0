@@ -72,7 +72,7 @@ function Landing() {
             }
             }
           >
-            Register Opens
+            Registration Opens
             {/* <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
               Soon
             </span> */}
@@ -85,7 +85,7 @@ function Landing() {
             }
             }
           >
-            Event Rule
+            Event Rules
           </button>
           <button
             type="button"
