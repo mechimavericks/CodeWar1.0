@@ -19,7 +19,7 @@ function Prizes() {
 
   return (
     <div ref={ref}>
-      <section className="py-6 dark:bg-gray-800 dark:text-gray-50">
+      <section className="py-6 dark:bg-gray-800 dark:text-gray-50 text-center">
         <div className="flex items-center flex-col gap-5 justify-center w-full p-5">
           <h1 className="sm:text-5xl text-3xl font-bold dark:text-white">
             Prizes And Awards
@@ -31,8 +31,8 @@ function Prizes() {
         </div>
 
         <div className="container mx-auto p-4 sm:p-10 overflow-hidden">
-          <div className="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
-           {(inView) && <motion.div
+          <div className="flex items-center  justify-center max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
+           {/* {(inView) && <motion.div
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -97,7 +97,7 @@ function Prizes() {
                   <span>Stickers and T-shirts</span>
                 </li>
               </ul>
-            </motion.div>}
+            </motion.div>} */}
            {(inView) && <motion.div
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,12 +105,12 @@ function Prizes() {
             hidden={{opacity:0, y: 200}}
            className="relative flex flex-col items-center p-8 border-2 rounded-md dark:border-violet-400 dark:bg-gray-800">
               <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-gradient-to-br from-yellow-300 to-yellow-600 dark:text-gray-900">
-                Mechi Hacks Winner
+                Prizes & Award
               </span>
               <p className="flex items-center justify-center my-6 space-x-2 font-bold">
-                <p className="my-6 text-4xl font-bold dark:text-violet-400">
+                {/* <p className="my-6 text-4xl font-bold dark:text-violet-400">
                   NPR 50,000
-                </p>
+                </p> */}
               </p>
               <ul className="flex-1 space-y-2">
                 <li className="flex items-center space-x-2">
@@ -128,7 +128,7 @@ function Prizes() {
                       d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                     ></path>
                   </svg>
-                  <span>Free One Year Programmiz Pro</span>
+                  <span>Certificate for all the Participant</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <svg
@@ -145,7 +145,7 @@ function Prizes() {
                       d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                     ></path>
                   </svg>
-                  <span>5k worth of NEST Nepal credits for 1 year</span>
+                  <span>Special Recoginazation for Winner</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <svg
@@ -162,11 +162,28 @@ function Prizes() {
                       d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                     ></path>
                   </svg>
-                  <span>Stickers and T-shirts</span>
+                  <span>Stickers for participants</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-6 h-6 dark:text-violet-400"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    ></path>
+                  </svg>
+                  <span>Exciting Gifts for Winner</span>
                 </li>
               </ul>
             </motion.div>}
-           {(inView) && <motion.div
+           {/* {(inView) && <motion.div
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -233,7 +250,7 @@ function Prizes() {
                   <span>Stickers and T-shirts</span>
                 </li>
               </ul>
-            </motion.div>}
+            </motion.div>} */}
           </div>
         </div>
       </section>
