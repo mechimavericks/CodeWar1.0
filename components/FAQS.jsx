@@ -25,7 +25,7 @@ function FAQS() {
                 How can I register for CodeWar 1.0?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                You can register for CodeWar 1.0 through the official registration form available on the event's website. Registration is mandatory to participate in the event.
+                You can register for CodeWar 1.0 through the official registration form available on the event&apos;s website. Registration is mandatory to participate in the event.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -73,7 +73,7 @@ function FAQS() {
                 When and where is CodeWar 1.0 happening?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                CodeWar 1.0 will take place on March 6 and 7, 2025, starting at 9:30 AM onwards. It will be hosted physically at the BCA Department of Mechi Multiple Campus, and participants will join through the event's designated platform.
+                CodeWar 1.0 will take place on March 6 and 7, 2025, starting at 9:30 AM onwards. It will be hosted physically at the BCA Department of Mechi Multiple Campus, and participants will join through the event&apos;s designated platform.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -89,7 +89,7 @@ function FAQS() {
                 How can I prepare for CodeWar 1.0?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                We recommend reviewing common coding problems, algorithms, and data structures. You can also practice coding on platforms like LeetCode, HackerRank, or Codeforces to improve your problem-solving skills. It's also important to collaborate with teammates and practice teamwork.
+                We recommend reviewing common coding problems, algorithms, and data structures. You can also practice coding on platforms like LeetCode, HackerRank, or Codeforces to improve your problem-solving skills. It&apos;s also important to collaborate with teammates and practice teamwork.
               </p>
             </details>
           </div>

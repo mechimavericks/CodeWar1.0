@@ -15,7 +15,7 @@ function WhatIsCodeWar() {
           skills, collaborate with peers, and enhance their coding expertise.
           The event consists of multiple challenging rounds, including
           individual and team-based programming tasks, designed to push
-          participants' logical and analytical thinking. Whether you are a
+          participants&#39; logical and analytical thinking. Whether you are a
           beginner or an advanced programmer, CodeWar 1.0 provides a platform
           to showcase your abilities and learn from others in a dynamic,
           competitive environment.
