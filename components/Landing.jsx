@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 function Landing() {
   const url =
-    "https://th.bing.com/th/id/R.948e837d18990ad0573b3a65c9505d0a?rik=ghXmIeWZgEaQZg&pid=ImgRaw&r=0";
+    "https://i.ibb.co/j9vk4vK6/R-min.jpg";
 
   const { ref, replay } = useScramble({
     text: "CODEWAR 1.0",

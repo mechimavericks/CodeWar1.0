@@ -4,10 +4,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "CodeWar 1.0",
+  title: "CodeWar 1.0 | Mechi Mavericks",
   description:
     "CodeWar 1.0 is a competitive coding event organized by Mechi Mavericks in collaboration with the BCA Association of Mechi Multiple Campus. It provides a platform for students to test their problem-solving skills, collaborate with peers, and enhance their coding expertise.",
-  image: "https://i.ibb.co/3yK62vMq/Screenshot-from-2025-02-24-13-59-24.png", // Replace with the actual image URL for CodeWar 1.0
+  image: "https://i.ibb.co/vx8ncYCq/img.png", // Replace with the actual image URL for CodeWar 1.0
   url: "https://codewar.mechimavericks.tech/",
   type: "website",
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata = {
     title: "CodeWar 1.0",
     description:
       "CodeWar 1.0 is a competitive coding event organized by Mechi Mavericks in collaboration with the BCA Association of Mechi Multiple Campus. It provides a platform for students to test their problem-solving skills, collaborate with peers, and enhance their coding expertise.",
-    image: "https://i.ibb.co/3yK62vMq/Screenshot-from-2025-02-24-13-59-24.png", // Replace with the actual image URL for CodeWar 1.0
+    images: ["https://i.ibb.co/vx8ncYCq/img.png"], // Replace with the actual image URL for CodeWar 1.0
   },
 };
 
