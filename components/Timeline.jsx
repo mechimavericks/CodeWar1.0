@@ -67,22 +67,22 @@ function Timeline() {
                 <TimeLineCard 
                   title="Registration"
                   date="28th March 2024 - 28th April 2024"
-                  description="Registration for Mechi Hacks is now open from March 28, 2024, until April 28, 2024. This one-month window provides aspiring participants with the opportunity to register for the upcoming event."
+                  description="Registration for Codewar1.0 is now open from March 28, 2024, until April 28, 2024. This one-month window provides aspiring participants with the opportunity to register for the upcoming event."
                 />
                    <TimeLineCard 
-                  title="Filtering of Teams"
+                  title="Formation of Teams"
                   date="30TH APRIL 2024"
-                  description="The filtering of teams will be done on April 30, 2024. The selected teams will be notified through email. The selected teams (20 Teams) will be eligible to Idea pitching stage of the event."
+                  description="The team formation will be done on April 30, 2024. The formated teams will be notified through email. The formated teams (20 Teams) need to cooperate with each other during the competition."
                 />
-                <TimeLineCard
+                {/* <TimeLineCard
                   title="Idea Pitching"
                   date="1st May 2024"
                   description="The selected teams will be eligible to Idea pitching stage of the event. The selected teams will be notified through email. The selected teams (20 Teams) will be eligible to Idea pitching stage of the event. And Top 10 teams will be selected for the final round."
-                />
+                /> */}
                 <TimeLineCard
                   title="Main Event"
                   date="Xst May 2024"
-                  description="The main event will be held on May X, 2024. The top 10 teams will be competing in the final round. The event will be conducted in Mechi Multiple Campus, Bhadrapur, Jhapa."
+                  description="The main event will be held on May X, 2024. The registered participant with their team will be competing in the final round. The event will be conducted in Mechi Multiple Campus, Bhadrapur, Jhapa."
                 />
               </div>
             </div>

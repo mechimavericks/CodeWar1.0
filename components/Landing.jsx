@@ -66,7 +66,7 @@ function Landing() {
         <div className="flex flex-wrap justify-center gap-5">
           <button
             type="button"
-            className="relative px-5 px-6 py-3 overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
+            className="relative px-6 py-3 overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
           >
             Register Opens
             <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
@@ -76,6 +76,9 @@ function Landing() {
           <button
             type="button"
             className="px-6 py-3 font-semibold duration-300 bg-gray-100 border rounded dark:border-gray-100 dark:text-gray-100 dark:bg-transparent dark:hover:bg-white hover:bg-transparent hover:text-white dark:hover:text-black"
+            onClick={()=>{
+              window.open("https://www.facebook.com/mechimavericks", "_blank")
+            }}
           >
             Find Us On Facebook
           </button>

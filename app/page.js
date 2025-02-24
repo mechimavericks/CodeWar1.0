@@ -4,7 +4,7 @@ import Landing from "@/components/Landing";
 import Prizes from "@/components/Prizes";
 import Sponsors from "@/components/Sponsors";
 import Timeline from "@/components/Timeline";
-import WhatIsHackathon from "@/components/WhatIsHackathon";
+import WhatIsCodeWar from "@/components/WhatIsHackathon";
 
 export default function Home() {
   return (
@@ -12,8 +12,8 @@ export default function Home() {
       <Landing />
       <Timeline />
       <Prizes />
-      <Sponsors />
-      <WhatIsHackathon />
+      {/* <Sponsors /> */}
+      <WhatIsCodeWar />
       <FAQS />
       <Footer />
     </>
