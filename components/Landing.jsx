@@ -62,16 +62,20 @@ function Landing() {
         <h2 className="text-sm font-bold text-center text-white md:text-2xl">
           @Mechi Multiple Campus - Bhadrapur, Jhapa
         </h2>
-        <h2 className="text-2xl font-bold text-white md:text-4xl">May 2024</h2>
+        <h2 className="text-2xl font-bold text-white md:text-4xl">March 2025</h2>
         <div className="flex flex-wrap justify-center gap-5">
           <button
             type="button"
             className="relative px-6 py-3 overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
+            onClick={()=>{
+              window.open("https://forms.mechimavericks.tech", "_blank")
+            }
+            }
           >
             Register Opens
-            <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
+            {/* <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
               Soon
-            </span>
+            </span> */}
           </button>
           <button
             type="button"
@@ -87,13 +91,13 @@ function Landing() {
         <div className="flex justify-center">
           <Countdown
             className="text-white"
-            date={new Date("2025-04-13T00:00:00")}
+            date={new Date("2025-03-02T00:00:00")}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (!completed) {
                 return (
                   <div className="flex flex-col gap-5">
                     <h2 className="text-lg font-bold text-center text-white md:text-2xl">
-                      Application Opens
+                    Application Closes On
                     </h2>
                     <h2 className="text-3xl font-bold text-white md:text-5xl">
                       {days}d {hours}h {minutes}m {seconds}s
