@@ -40,4 +40,7 @@ This project is licensed under the MIT License.
 
 If you have any questions or suggestions regarding CodeWar 1.0, feel free to reach out to us at [mechimavericks@gmail.com](mailto:mechimavericks@gmail.com).
 
+## Discord
+Join our Discord community to connect with other participants, share ideas, and get support during the event: [Discord Link](https://discord.gg/tSeEdunV8c).
+
 Happy coding! 
