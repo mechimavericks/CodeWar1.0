@@ -19,11 +19,11 @@ function SupportedBy() {
       logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
       link: "#",
     },
-    {
-      name: "Defang.io",
-      logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
-      link: "https://defang.io/",
-    }
+    // {
+    //   name: "Defang.io",
+    //   logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
+    //   link: "https://defang.io/",
+    // }
   ]
   
   useEffect(() => {
