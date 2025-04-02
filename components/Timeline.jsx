@@ -65,18 +65,18 @@ function Timeline() {
               <div className="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:dark:bg-gray-700 before:bg-blue-700">
                 <TimeLineCard
                   title="Registration"
-                  date="24th February 2025 - 1st March 2025"
-                  description="Registration for CodeWar 1.0 opens from February 24, 2025, until March 1, 2025. This one-month window provides aspiring participants with the opportunity to register for the upcoming event."
+                  date="1st April 2025 - 23rd April 2025"
+                  description="Registration for CodeWar 1.0 opens from April1, 2025, until April 23, 2025. This timeframe provides aspiring participants with the opportunity to register for the upcoming event."
                 />
                 <TimeLineCard
                   title="Formation of Teams"
-                  date="3rd March 2025"
-                  description="The team formation will be completed on March 3rd, 2025. The formatted teams will be notified via email and need to cooperate during the competition."
+                  date="24th April 2025"
+                  description="The team formation will be completed on 24th April, 2025. The formatted teams will be notified via email and need to cooperate during the competition."
                 />
                 <TimeLineCard
                   title="Main Event"
-                  date="6th - 7th March 2025"
-                  description="The main event will take place on March 6 and 7, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
+                  date="27th - 28th March 2025"
+                  description="The main event will take place on April 27 and 28, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
                 />
               </div>
             </div>

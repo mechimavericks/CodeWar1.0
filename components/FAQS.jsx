@@ -73,7 +73,7 @@ function FAQS() {
                 When and where is CodeWar 1.0 happening?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                CodeWar 1.0 will take place on March 6 and 7, 2025, starting at 9:30 AM onwards. It will be hosted physically at the BCA Department of Mechi Multiple Campus, and participants will join through the event&apos;s designated platform.
+                CodeWar 1.0 will take place on April 27 and 28, 2025, starting at 9:30 AM onwards. It will be hosted physically at the BCA Department of Mechi Multiple Campus, and participants will join through the event&apos;s designated platform.
               </p>
             </details>
             <details className="w-full border rounded-lg">

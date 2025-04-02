@@ -109,7 +109,7 @@ function Landing() {
         <div className="flex justify-center">
           <Countdown
             className="text-white"
-            date={new Date("2025-04-24T00:00:00")}
+            date={new Date("2025-04-23T00:00:00")}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (!completed) {
                 return (
