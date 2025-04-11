@@ -5,6 +5,16 @@ function SupportedBy() {
   const scrollRef = useRef(null);
   const supportedByList = [
     {
+      name: "Defang.io",
+      logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
+      link: "https://defang.io/",
+    },
+    {
+      name: "GeeksforGeeks",
+      logo: "https://i.ibb.co/8D1b3HDf/220px-Geeksfor-Geeks-svg.webp",
+      link: "https://www.geeksforgeeks.org/",
+    },
+    {
       name: "Mechi Mavericks",
       logo: "https://i.ibb.co/Xrxfm6G0/mechimavericks.png",
       link: "https://mechimavericks.tech/",
@@ -19,11 +29,6 @@ function SupportedBy() {
       logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
       link: "#",
     },
-    // {
-    //   name: "Defang.io",
-    //   logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
-    //   link: "https://defang.io/",
-    // }
   ]
   
   useEffect(() => {
