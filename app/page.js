@@ -13,7 +13,7 @@ export default function Home() {
       <Landing />
       <Timeline />
       <Prizes />
-      {/* <Sponsors /> */}
+      <Sponsors />
       <SupportedBy />
       <WhatIsCodeWar />
       <FAQS />
