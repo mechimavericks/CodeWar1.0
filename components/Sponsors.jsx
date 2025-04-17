@@ -17,7 +17,7 @@ function Sponsors() {
         link: "https://www.geeksforgeeks.org/",
       },
       // {
-      //   name: "Mechi Mavericks",
+      //   name: "Mechi Mavericks", 
       //   logo: "https://i.ibb.co/Xrxfm6G0/mechimavericks.png",
       //   link: "https://mechimavericks.tech/",
       // },
