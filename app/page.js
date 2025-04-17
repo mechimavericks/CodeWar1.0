@@ -6,6 +6,7 @@ import Sponsors from "@/components/Sponsors";
 import SupportedBy from "@/components/SupportedBy";
 import Timeline from "@/components/Timeline";
 import WhatIsCodeWar from "@/components/WhatIsHackathon";
+import Organized from "@/components/Organized";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Landing />
       <Timeline />
       <Prizes />
+      <Organized />
       <Sponsors />
       <SupportedBy />
       <WhatIsCodeWar />

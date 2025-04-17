@@ -1,363 +1,104 @@
 'use client'
-import React, {useState} from "react";
-import { useRef, useEffect } from "react";
-import {  motion, useAnimation } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function Prizes() {
-
   const controls = useAnimation();
-  const [ref, inView] = useInView();
-  // useEffect(() => {
-  //   if (inView) {
-  //     controls.start("visible");
-  //   }else{
-  //     controls.start("hidden");
-  //   }
-  // }, [controls, inView]);
-
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
 
   return (
     <div ref={ref}>
-      <section className="py-6 dark:bg-gray-800 dark:text-gray-50 text-center">
-        <div className="flex items-center flex-col gap-5 justify-center w-full p-5">
-          <h1 className="sm:text-5xl text-3xl font-bold dark:text-white">
-            Prizes And Awards
-          </h1>
-          <p className="text-center">
-            Please note that, the prizes and awards are subjected to change as
-            per the event&apos;s requirements.
-          </p>
-        </div>
+      <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Prizes And Awards
+            </h1>
+            <p className="text-base sm:text-lg text-gray-300">
+              Please note that, the prizes and awards are subjected to change as
+              per the event&apos;s requirements.
+            </p>
+          </div>
 
-        <div className="container mx-auto p-4 sm:p-10 overflow-hidden">
-          <div className="flex items-center  justify-center max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
-           {/* {(inView) && <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            hidden={{opacity:0, x: -200}}
-             className="relative z-0 flex flex-col items-center p-8 border rounded-md">
-              <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg dark:bg-violet-400 dark:text-gray-900">
-                Second Runner Up
-              </span>
-              <p className="my-6 text-4xl font-bold dark:text-violet-400">
-                NPR 20,000
-              </p>
-              <ul className="flex-1 space-y-2">
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Free One Year Programmiz Pro</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>5k worth of NEST Nepal credits for 1 year</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Stickers and T-shirts</span>
-                </li>
-              </ul>
-            </motion.div>} */}
-           {(inView) && <motion.div
-            initial={{ opacity: 0, y: 200 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            hidden={{opacity:0, y: 200}}
-           className="relative flex flex-col items-center p-8 border-2 rounded-md dark:border-violet-400 dark:bg-gray-800">
-              <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-gradient-to-br from-yellow-300 to-yellow-600 dark:text-gray-900">
-                Winner
-              </span>
-              <p className="flex items-center justify-center my-6 space-x-2 font-bold">
-                {/* <p className="my-6 text-4xl font-bold dark:text-violet-400">
-                  NPR 50,000
-                </p> */}
-              </p>
-              <ul className="flex-1 space-y-2">
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Certificate for all the Participant</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Special Recoginazation for Winner</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Stickers for participants</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Exciting Swags & Gifts for Winner</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Defang Pro for 1 Year</span>
-                </li>
-              </ul>
-            </motion.div>}
-            {(inView) && <motion.div
-            initial={{ opacity: 0, y: 200 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            hidden={{opacity:0, y: 200}}
-           className="relative flex flex-col items-center p-8 border-2 rounded-md dark:border-violet-400 dark:bg-gray-800">
-              <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-gradient-to-br from-gray-300 to-gray-600 dark:text-gray-900">
-                First Runner Up
-              </span>
-              <p className="flex items-center justify-center my-6 space-x-2 font-bold">
-                {/* <p className="my-6 text-4xl font-bold dark:text-violet-400">
-                  NPR 50,000
-                </p> */}
-              </p>
-              <ul className="flex-1 space-y-2">
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Certificate for all the Participant</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Special Recoginazation</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Stickers for participants</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Exciting Gifts</span>
-                </li>
-              </ul>
-            </motion.div>}
-           {/* {(inView) && <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            hidden={{opacity:0, x: 200}}
-           className="relative z-0 flex flex-col items-center p-8 border rounded-md dark:bg-gray-800">
-              <span className="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-gradient-to-br from-gray-300 to-gray-600 dark:text-gray-900">
-                First Runner Up
-              </span>
-              <p className="flex items-center justify-center my-6 space-x-2 font-bold">
-                <p className="my-6 text-4xl font-bold dark:text-violet-400">
-                  NPR 30,000
-                </p>
-              </p>
-              <ul className="flex-1 space-y-2">
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Free One Year Programmiz Pro</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>5k worth of NEST Nepal credits for 1 year</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6 dark:text-violet-400"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    ></path>
-                  </svg>
-                  <span>Stickers and T-shirts</span>
-                </li>
-              </ul>
-            </motion.div>} */}
+          {/* Prize Cards Container */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+            {/* Winner Card */}
+            {inView && (
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative flex flex-col h-full p-6 sm:p-8 bg-gray-800/50 rounded-lg border-2 border-violet-400"
+              >
+                <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-6 py-1 bg-gradient-to-br from-yellow-300 to-yellow-600 text-gray-900 font-medium rounded-full">
+                  Winner
+                </span>
+                
+                <div className="mt-8 space-y-4">
+                  <ul className="space-y-3 text-gray-300">
+                    <PrizeListItem text="Certificate for all the Participants" />
+                    <PrizeListItem text="Special Recognition for Winner" />
+                    <PrizeListItem text="Stickers for participants" />
+                    <PrizeListItem text="Exciting Swags & Gifts for Winner" />
+                    <PrizeListItem text="Defang Pro for 1 Year" />
+                  </ul>
+                </div>
+              </motion.div>
+            )}
+
+            {/* First Runner Up Card */}
+            {inView && (
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative flex flex-col h-full p-6 sm:p-8 bg-gray-800/50 rounded-lg border-2 border-violet-400"
+              >
+                <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-6 py-1 bg-gradient-to-br from-gray-300 to-gray-600 text-gray-900 font-medium rounded-full">
+                  First Runner Up
+                </span>
+                
+                <div className="mt-8 space-y-4">
+                  <ul className="space-y-3 text-gray-300">
+                    <PrizeListItem text="Certificate for all the Participants" />
+                    <PrizeListItem text="Special Recognition" />
+                    <PrizeListItem text="Stickers for participants" />
+                    <PrizeListItem text="Exciting Gifts" />
+                  </ul>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
     </div>
   );
 }
+
+// Helper component for prize list items
+const PrizeListItem = ({ text }) => (
+  <li className="flex items-center space-x-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-violet-400"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+      />
+    </svg>
+    <span className="text-sm sm:text-base">{text}</span>
+  </li>
+);
 
 export default Prizes;
