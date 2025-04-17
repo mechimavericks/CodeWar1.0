@@ -12,7 +12,7 @@ function SupportedBy() {
     {
       name: "Unity Samaj",
       logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
-      link: "#",
+      link: "https://www.facebook.com/profile.php?id=61558765380070",
     },
   ];
 
@@ -20,31 +20,50 @@ function SupportedBy() {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
-    const content = scrollContainer.querySelector('.sponsors-row');
+    const content = scrollContainer.querySelector(".sponsors-row");
     if (!content) return;
 
     const totalWidth = content.scrollWidth;
     const containerWidth = scrollContainer.clientWidth;
 
     const handleResize = () => {
-      if (totalWidth < containerWidth * 1.2) {
-        content.classList.remove('absolute');
-        content.classList.add('mx-auto', 'justify-center', 'flex-wrap');
-        scrollContainer.classList.add('flex', 'justify-center');
+      const currentWidth = scrollContainer.clientWidth;
+
+      if (totalWidth < currentWidth * 1.2) {
+        content.classList.remove("absolute");
+        content.classList.add("mx-auto", "justify-center", "flex-wrap");
+        scrollContainer.classList.add("flex", "justify-center");
+
+        // Remove any cloned content when switching to centered mode
+        const clones = scrollContainer.querySelectorAll(
+          ".sponsors-row:not(:first-child)"
+        );
+        clones.forEach((clone) => clone.remove());
       } else {
-        content.classList.remove('mx-auto', 'justify-center', 'flex-wrap');
-        content.classList.add('absolute');
-        scrollContainer.classList.remove('flex', 'justify-center');
+        content.classList.remove("mx-auto", "justify-center", "flex-wrap");
+        content.classList.add("absolute");
+        scrollContainer.classList.remove("flex", "justify-center");
+
+        // Add clone if needed and not already present
+        if (scrollContainer.querySelectorAll(".sponsors-row").length === 1) {
+          const clone = content.cloneNode(true);
+          scrollContainer.appendChild(clone);
+        }
       }
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Only setup animation if we have enough logos
+    let animationId;
+
     if (totalWidth >= containerWidth * 1.2) {
-      const clone = content.cloneNode(true);
-      scrollContainer.appendChild(clone);
+      // Make sure we have a clone for the animation
+      if (scrollContainer.querySelectorAll(".sponsors-row").length === 1) {
+        const clone = content.cloneNode(true);
+        scrollContainer.appendChild(clone);
+      }
 
       let scrollPos = 0;
       const scrollSpeed = 0.5;
@@ -55,28 +74,26 @@ function SupportedBy() {
           scrollPos = 0;
         }
         scrollContainer.scrollLeft = scrollPos;
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
       };
 
-      const animationId = requestAnimationFrame(animate);
-
-      return () => {
-        cancelAnimationFrame(animationId);
-        window.removeEventListener('resize', handleResize);
-      };
+      animationId = requestAnimationFrame(animate);
     }
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      if (animationId) cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
     <div className="w-full">
       <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
             Supported By
           </h2>
-          <p className="text-base sm:text-lg text-gray-300 mb-8 sm:mb-12">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto">
             We are grateful to our supporters for their generous contributions.
           </p>
         </div>
@@ -85,8 +102,8 @@ function SupportedBy() {
           ref={scrollRef}
           className="overflow-hidden w-full relative"
           style={{
-            height: "clamp(120px, 25vw, 180px)",
-            maxWidth: "1400px",
+            height: "clamp(100px, 20vw, 180px)",
+            maxWidth: "100%",
             margin: "0 auto",
           }}
         >
@@ -94,13 +111,13 @@ function SupportedBy() {
             {supportedByList.map((sponsor, index) => (
               <div
                 key={`sponsor-${index}`}
-                className="flex-shrink-0 p-3 sm:p-4 md:p-6 flex items-center justify-center"
+                className="flex-shrink-0 p-2 sm:p-3 md:p-4 lg:p-6 flex items-center justify-center"
               >
                 <a
                   href={sponsor.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-2 sm:mx-4 md:mx-6"
+                  className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
                 >
                   <img
                     src={sponsor.logo}
