@@ -62,7 +62,7 @@ function Landing() {
         <h2 className="text-sm font-bold text-center text-white md:text-2xl">
           @Mechi Multiple Campus - Bhadrapur, Jhapa
         </h2>
-        <h2 className="text-2xl font-bold text-white md:text-4xl">April 2025</h2>
+        <h2 className="text-2xl font-bold text-white md:text-4xl">June 2025</h2>
         {/* <h2 className="text-2xl font-bold text-white md:text-4xl">Coming Soon</h2> */}
         <div className="flex flex-wrap justify-center gap-5">
           <button
@@ -73,13 +73,13 @@ function Landing() {
             }
             }
           >
-            {/* Registration Opens */}
-            Registration Form
-            {/* <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
+            Registration Opens
+            {/* Registration Form */}
+            <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
               Soon
-            </span> */}
+            </span>
           </button>
-          <button
+          {/* <button
             type="button"
             className="relative px-6 py-3 overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
             onClick={() => {
@@ -89,7 +89,7 @@ function Landing() {
             }
           >
             Event Rules
-          </button>
+          </button> */}
           <button
             type="button"
             className="px-6 py-3 font-semibold duration-300 bg-gray-100 border rounded dark:border-gray-100 dark:text-gray-100 dark:bg-transparent dark:hover:bg-white hover:bg-transparent hover:text-white dark:hover:text-black"
@@ -105,7 +105,7 @@ function Landing() {
             Find Us On Facebook
           </button>
         </div>
-        {/* Application Opens */}
+        Application Opens
         <div className="flex justify-center">
           <Countdown
             className="text-white"
@@ -115,11 +115,12 @@ function Landing() {
                 return (
                   <div className="flex flex-col gap-5">
                     <h2 className="text-lg font-bold text-center text-white md:text-2xl">
-                      Application Closes On
+                      {/* Application Closes On */}
+                      Application Opens Soon
                     </h2>
-                    <h2 className="text-3xl font-bold text-white md:text-5xl">
+                    {/* <h2 className="text-3xl font-bold text-white md:text-5xl">
                       {days}d {hours}h {minutes}m {seconds}s
-                    </h2>
+                    </h2> */}
                   </div>
                 );
               }

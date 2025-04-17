@@ -73,7 +73,7 @@ function FAQS() {
                 When and where is CodeWar 1.0 happening?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                CodeWar 1.0 will take place on April 27 and 28, 2025, starting at 9:30 AM onwards. It will be hosted physically at the BCA Department of Mechi Multiple Campus, and participants will join through the event&apos;s designated platform.
+                CodeWar 1.0 will take place on June 05 and 06, 2025, starting at 9:30 AM onwards. It will be hosted physically at the BCA Department of Mechi Multiple Campus, and participants will join through the event&apos;s designated platform.
               </p>
             </details>
             <details className="w-full border rounded-lg">
@@ -81,7 +81,7 @@ function FAQS() {
                 Can I participate if I am not a BCA student at Mechi Multiple Campus?
               </summary>
               <p className="px-4 py-6 pt-0 ml-4 -mt-4 dark:text-gray-400">
-                Unfortunately, CodeWar 1.0 is exclusively for BCA students at Mechi Multiple Campus. However, we encourage you to stay tuned for future events that may open to other participants.
+                Yes, CodeWar 1.0 is for All the  students at Mechi Multiple Campus. We encourage you to stay tuned for future events.
               </p>
             </details>
             <details className="w-full border rounded-lg">
