@@ -13,7 +13,7 @@ function WhatIsCodeWar() {
           <div className="bg-gray-800/50 rounded-lg p-4 sm:p-6 backdrop-blur-sm border border-gray-700">
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
               CodeWar 1.0 is a competitive coding event organized by Mechi Mavericks
-              in collaboration with the BCA Association of Mechi Multiple Campus.
+              supported by the BCA Association of Mechi Multiple Campus.
               It is an opportunity for students to test their problem-solving
               skills, collaborate with peers, and enhance their coding expertise.
             </p>
