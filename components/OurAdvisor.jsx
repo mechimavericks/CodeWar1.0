@@ -11,7 +11,7 @@ function SupportedBy() {
       // isCircular: false,
     },
     {
-      name: "Bansaj Poudel",
+      name: "Banshaj Paudel",
       logo: "https://i.ibb.co/bjf3DRwB/482658870-3114467838706963-7792256541371545998-n.png",
       // isCircular: true,
     },
