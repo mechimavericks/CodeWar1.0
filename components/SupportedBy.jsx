@@ -6,13 +6,15 @@ function SupportedBy() {
   const supportedByList = [
     {
       name: "BCA Association",
-      logo: "https://i.ibb.co/hJd0RtxG/387786702-333272159248749-5396401851382435101-n-removebg-preview.png",
+      logo: "https://i.ibb.co/8nyYVwsR/Logo-BCA-Association.png",
       link: "https://bcaassociation.tech/",
+      isCircular: false,
     },
     {
       name: "Unity Samaj",
       logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
       link: "https://www.facebook.com/profile.php?id=61558765380070",
+      isCircular: true,
     },
   ];
 
@@ -107,7 +109,7 @@ function SupportedBy() {
             margin: "0 auto",
           }}
         >
-          <div className="sponsors-row flex">
+          <div className="sponsors-row flex justify-center">
             {supportedByList.map((sponsor, index) => (
               <div
                 key={`sponsor-${index}`}
@@ -119,12 +121,23 @@ function SupportedBy() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
                 >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
-                    loading="lazy"
-                  />
+                  {sponsor.isCircular ? (
+                    <div className="bg-white rounded-full flex items-center justify-center w-4/5 h-4/5 p-0">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="object-contain w-64 rounded-full transition-all duration-300 filter hover:brightness-110"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
+                      loading="lazy"
+                    />
+                  )}
                 </a>
               </div>
             ))}

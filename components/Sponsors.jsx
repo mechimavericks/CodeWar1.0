@@ -9,11 +9,13 @@ function Sponsors() {
       name: "Defang.io",
       logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
       link: "https://defang.io/",
+      title: "Technical Partner",
     },
     {
       name: "GeeksforGeeks",
       logo: "https://i.ibb.co/8D1b3HDf/220px-Geeksfor-Geeks-svg.webp",
       link: "https://www.geeksforgeeks.org/",
+      title: "Learning Partner",
     },
     // {
     //   name: "Mechi Mavericks",
@@ -88,25 +90,30 @@ function Sponsors() {
         <div
           ref={scrollRef}
           className="overflow-hidden w-full relative mt-6"
-          style={{ height: "120px", maxWidth: "100vw" }} // Responsive height
+          style={{ height: "180px", maxWidth: "100vw" }} // Increased height to accommodate titles
         >
           <div className="sponsors-row flex absolute">
             {supportedByList.map((sponsor, index) => (
               <div
                 key={`sponsor-${index}`}
-                className="flex-shrink-0 p-2 sm:p-4 md:p-6 flex items-center justify-center"
+                className="flex-shrink-0 p-2 sm:p-4 md:p-6 flex flex-col items-center justify-center"
               >
                 <a
                   href={sponsor.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 mx-2 sm:mx-4 md:mx-6"
+                  className="flex flex-col items-center justify-center mx-2 sm:mx-4 md:mx-6"
                 >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-                  />
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center">
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="object-contain max-w-full max-h-full rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+                  <span className="mt-2 text-sm sm:text-base md:text-lg font-medium text-gray-300">
+                    {sponsor.title}
+                  </span>
                 </a>
               </div>
             ))}

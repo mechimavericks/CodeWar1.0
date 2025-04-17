@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useScramble } from "use-scramble";
 import Countdown from "react-countdown";
 import { useInView } from "react-intersection-observer";
+import Button from "./ui/Button";
 
 function Landing() {
   const url = "https://i.ibb.co/j9vk4vK6/R-min.jpg";
@@ -67,22 +68,17 @@ function Landing() {
         </h2>
         {/* <h2 className="text-2xl font-bold text-white md:text-4xl">Coming Soon</h2> */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4">
-          <button
-            type="button"
-            className="relative px-4 sm:px-5 md:px-6 py-2 sm:py-3 text-sm sm:text-base overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
+          <Button
+            text="Registration Opens"
+            variant="primary"
+            badgeText="Soon"
             onClick={() => {
               window.open("https://forms.mechimavericks.tech", "_blank");
             }}
-          >
-            Registration Opens
-            {/* Registration Form */}
-            <span className="absolute top-0 right-0 p-5 px-3 py-1 text-xs text-center uppercase whitespace-no-wrap origin-bottom-left transform rotate-45 -translate-y-full tracki translate-x-1/3 dark:bg-violet-400 bg-violet-600">
-              Soon
-            </span>
-          </button>
-          <button
-            type="button"
-            className="px-4 sm:px-5 md:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold duration-300 bg-gray-100 border rounded dark:border-gray-100 dark:text-gray-100 dark:bg-transparent dark:hover:bg-white hover:bg-transparent hover:text-white dark:hover:text-black"
+          />
+          <Button
+            text="Find Us On Facebook"
+            variant="secondary"
             onClick={() => {
               const url = window.location.href;
               if (url.includes("bcaassociation")) {
@@ -97,9 +93,7 @@ function Landing() {
                 );
               }
             }}
-          >
-            Find Us On Facebook
-          </button>
+          />
         </div>
         <div className="text-center text-white text-sm sm:text-base mt-2">
           Application Opens

@@ -26,7 +26,7 @@ function Prizes() {
           </div>
 
           {/* Prize Cards Container */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
             {/* Winner Card */}
             {inView && (
               <motion.div
@@ -73,6 +73,29 @@ function Prizes() {
                 </div>
               </motion.div>
             )}
+
+            {/* Second Runner Up Card */}
+            {inView && (
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="relative flex flex-col h-full p-5 sm:p-6 md:p-8 bg-gray-800/50 rounded-lg border-2 border-violet-400"
+              >
+                <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 sm:px-6 py-1 bg-gradient-to-br from-amber-600 to-amber-800 text-gray-900 text-sm md:text-base font-medium rounded-full whitespace-nowrap">
+                  Second Runner Up
+                </span>
+
+                <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
+                  <ul className="space-y-2 sm:space-y-3 text-gray-300">
+                    <PrizeListItem text="Certificate for all the Participants" />
+                    <PrizeListItem text="Recognition" />
+                    <PrizeListItem text="Stickers for participants" />
+                    <PrizeListItem text="Participation Gifts" />
+                  </ul>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
@@ -80,7 +103,7 @@ function Prizes() {
   );
 }
 
-// Helper component for prize list items
+// Helper component for prize list items remains the same
 const PrizeListItem = ({ text }) => (
   <li className="flex items-center space-x-2">
     <svg

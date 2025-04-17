@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 function WhatIsCodeWar() {
   return (
-    <section className="min-h-[80vh] sm:min-h-screen bg-gradient-to-b from-gray-800 to-gray-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-20">
+    <section className=" bg-gradient-to-b from-gray-800 to-gray-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
