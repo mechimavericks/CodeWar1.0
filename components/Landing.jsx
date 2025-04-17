@@ -5,8 +5,7 @@ import Countdown from "react-countdown";
 import { useInView } from "react-intersection-observer";
 
 function Landing() {
-  const url =
-    "https://i.ibb.co/j9vk4vK6/R-min.jpg";
+  const url = "https://i.ibb.co/j9vk4vK6/R-min.jpg";
 
   const { ref, replay } = useScramble({
     text: "CODEWAR 1.0",
@@ -21,9 +20,7 @@ function Landing() {
       replay();
       replays();
     }
-  }
-    , [inView]);
-
+  }, [inView]);
 
   const { ref: reff, replay: replays } = useScramble({
     text: "CODEWAR 1.0",
@@ -40,7 +37,10 @@ function Landing() {
         backgroundPosition: "center",
       }}
     >
-      <div ref={ref1} className="flex flex-col items-center justify-center w-full gap-10 p-5">
+      <div
+        ref={ref1}
+        className="flex flex-col items-center justify-center w-full gap-10 p-5"
+      >
         <div className="absolute flex left-3 top-3">
           <h2
             className="text-xl text-white sm:text-2xl"
@@ -51,14 +51,16 @@ function Landing() {
             CODEWAR 1.0
           </h2>
         </div>
-        {(inView) && <h1
-          className="text-5xl font-bold text-white sm:text-6xl lg:text-9xl md:text-7xl"
-          ref={ref}
-          onMouseOver={replay}
-          onFocus={replay}
-        >
-          CODEWAR 1.0
-        </h1>}
+        {inView && (
+          <h1
+            className="text-5xl font-bold text-white sm:text-6xl lg:text-9xl md:text-7xl"
+            ref={ref}
+            onMouseOver={replay}
+            onFocus={replay}
+          >
+            CODEWAR 1.0
+          </h1>
+        )}
         <h2 className="text-sm font-bold text-center text-white md:text-2xl">
           @Mechi Multiple Campus - Bhadrapur, Jhapa
         </h2>
@@ -69,9 +71,8 @@ function Landing() {
             type="button"
             className="relative px-6 py-3 overflow-hidden font-semibold text-white duration-300 bg-blue-800 rounded dark:bg-blue-200 dark:text-gray-900 hover:bg-black hover:text-white"
             onClick={() => {
-              window.open("https://forms.mechimavericks.tech", "_blank")
-            }
-            }
+              window.open("https://forms.mechimavericks.tech", "_blank");
+            }}
           >
             Registration Opens
             {/* Registration Form */}
@@ -96,13 +97,19 @@ function Landing() {
             onClick={() => {
               const url = window.location.href; // Declare url properly
               if (url.includes("bcaassociation")) {
-                window.open("https://www.facebook.com/bcaassociation", "_blank"); // Fixed typo
+                window.open(
+                  "https://www.facebook.com/bcaassociation",
+                  "_blank"
+                ); // Fixed typo
               } else {
-                window.open("https://www.facebook.com/mechimavericks", "_blank"); // Fixed typo
+                window.open(
+                  "https://www.facebook.com/mechimavericks",
+                  "_blank"
+                ); // Fixed typo
               }
             }}
           >
-            Find Us On Facebook
+            Find us On Facebook
           </button>
         </div>
         Application Opens
