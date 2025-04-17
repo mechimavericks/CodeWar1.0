@@ -7,13 +7,12 @@ function SupportedBy() {
     {
       name: "Sadhana Panthi",
       logo: "https://i.ibb.co/2Ysrss2D/491000740-1041868541161950-3756942902193998104-n.png",
-      // link: "https://bcaassociation.tech/",
-      // isCircular: false,
+      link: "https://www.sadhanapanthi.com.np/",
     },
     {
       name: "Banshaj Paudel",
       logo: "https://i.ibb.co/bjf3DRwB/482658870-3114467838706963-7792256541371545998-n.png",
-      // isCircular: true,
+      link: "https://banshaj.com.np/",
     },
   ];
 
@@ -103,7 +102,7 @@ function SupportedBy() {
           ref={scrollRef}
           className="overflow-hidden w-full relative"
           style={{
-            height: "clamp(100px, 20vw, 180px)",
+            height: "auto",
             maxWidth: "100%",
             margin: "0 auto",
             display: "flex",
@@ -123,23 +122,14 @@ function SupportedBy() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
                 >
-                  {advisor.isCircular ? (
-                    <div className="bg-white rounded-full flex items-center justify-center w-4/5 h-4/5 p-0">
-                      <img
-                        src={advisor.logo}
-                        alt={advisor.name}
-                        className="object-contain w-64 rounded-full transition-all duration-300 filter hover:brightness-110"
-                        loading="lazy"
-                      />
-                    </div>
-                  ) : (
+                  
                     <img
                       src={advisor.logo}
                       alt={advisor.name}
                       className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
                       loading="lazy"
                     />
-                  )}
+                  
                 </a>
                 <div className="text-center mt-2">
                   <span className="text-sm sm:text-base md:text-lg font-medium text-gray-300">
