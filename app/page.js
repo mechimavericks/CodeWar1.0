@@ -7,6 +7,7 @@ import SupportedBy from "@/components/SupportedBy";
 import Timeline from "@/components/Timeline";
 import WhatIsCodeWar from "@/components/WhatIsHackathon";
 import Organized from "@/components/Organized";
+import OurAdvisor from "@/components/OurAdvisor";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Organized />
       <Sponsors />
       <SupportedBy />
+      <OurAdvisor/>
       <WhatIsCodeWar />
       <FAQS />
       <Footer />
