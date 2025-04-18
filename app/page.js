@@ -8,6 +8,7 @@ import Timeline from "@/components/Timeline";
 import WhatIsCodeWar from "@/components/WhatIsHackathon";
 import Organized from "@/components/Organized";
 import OurAdvisor from "@/components/OurAdvisor";
+import PoweredBy from "@/components/PowerBy";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Prizes />
       <Organized />
       <Sponsors />
+      <PoweredBy/>
       <SupportedBy />
       <OurAdvisor/>
       <WhatIsCodeWar />

@@ -17,11 +17,12 @@ function Sponsors() {
       link: "https://www.geeksforgeeks.org/",
       title: "Learning Partner",
     },
-    // {
-    //   name: "Mechi Mavericks",
-    //   logo: "https://i.ibb.co/Xrxfm6G0/mechimavericks.png",
-    //   link: "https://mechimavericks.tech/",
-    // },
+    {
+      name: "GitHub Education",
+      logo: "https://i.ibb.co/9cJYxq0P/github-education.png",
+      link: "https://education.github.com/",
+      title: "Education & Community Partner",
+    }
     // {
     //   name: "BCA Association",
     //   logo: "https://i.ibb.co/hJd0RtxG/387786702-333272159248749-5396401851382435101-n-removebg-preview.png",
@@ -90,7 +91,7 @@ function Sponsors() {
         <div
           ref={scrollRef}
           className="overflow-hidden w-full relative mt-6"
-          style={{ height: "180px", maxWidth: "100vw" }} // Increased height to accommodate titles
+          style={{ height: "220px", maxWidth: "100vw" }} // Increased height to accommodate titles
         >
           <div className="sponsors-row flex absolute">
             {supportedByList.map((sponsor, index) => (
@@ -111,8 +112,11 @@ function Sponsors() {
                       className="object-contain max-w-full max-h-full rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
                     />
                   </div>
-                  <span className="mt-2 text-sm sm:text-base md:text-lg font-medium text-gray-300">
+                  <span className="mt-2 text-sm sm:text-base md:text-lg font-medium text-gray-300 flex flex-col items-center justify-center">
+                    {sponsor.name}
+                    <span className="text-xs sm:text-sm md:text-base text-[f3f3f3]">
                     {sponsor.title}
+                      </span>
                   </span>
                 </a>
               </div>
