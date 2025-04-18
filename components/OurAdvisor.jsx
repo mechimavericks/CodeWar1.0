@@ -91,10 +91,10 @@ function SupportedBy() {
       <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
-            Our Advisor
+            Our Advisors
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto">
-            We are grateful to our Advisor for their generous contributions.
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
+            We are grateful to our Advisors for their generous contributions.
           </p>
         </div>
 
@@ -105,38 +105,36 @@ function SupportedBy() {
             height: "auto",
             maxWidth: "100%",
             margin: "0 auto",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            padding: "0 16px",
           }}
         >
-          <div className="sponsors-row flex justify-center">
+          <div className="sponsors-row flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
             {ourAdvisorList.map((advisor, index) => (
               <div
-                key={`sponsor-${index}`}
-                className="flex-shrink-0 p-2 sm:p-3 md:p-4 lg:p-6 flex items-center justify-center flex-col "
+                key={`advisor-${index}`}
+                className="flex flex-col items-center"
               >
                 <a
                   href={advisor.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
+                  className="block"
                 >
-                  
+                  <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                     <img
                       src={advisor.logo}
                       alt={advisor.name}
-                      className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
+                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
-                  
+                  </div>
                 </a>
-                <div className="text-center mt-2">
-                  <span className="text-sm sm:text-base md:text-lg font-medium text-gray-300">
+                <div className="text-center mt-3 sm:mt-4">
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
                     {advisor.name}
-                  </span>
+                  </h3>
                 </div>
-                </div>
+              </div>
             ))}
           </div>
         </div>

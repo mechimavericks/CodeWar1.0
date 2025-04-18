@@ -102,7 +102,7 @@ function SupportedBy() {
 
         <div
           ref={scrollRef}
-          className="overflow-hidden w-full relative"
+          className="overflow-hidden w-full relative mx-auto"
           style={{
             height: "clamp(100px, 20vw, 180px)",
             maxWidth: "100%",
