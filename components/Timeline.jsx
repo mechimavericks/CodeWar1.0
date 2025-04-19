@@ -149,7 +149,7 @@ function Timeline() {
               <TimeLineCard
                 title="Main Event"
                 date="05th - 06th June 2025"
-                description="The main event will take place on June 05 and 05, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
+                description="The main event will take place on June 05 and 06, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
               />
             </div>
           </div>

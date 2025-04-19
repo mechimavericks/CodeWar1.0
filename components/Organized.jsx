@@ -57,13 +57,13 @@ const Organized = () => {
             className="flex justify-center"
           >
             <div className="relative">
-              {/* Glow effect behind logo */}
-              <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-blue-500/20 rounded-full blur-xl"></div>
+              {/* Modified glow effect - reduced intensity */}
+              <div className="absolute inset-4 bg-gradient-to-r from-gray-600/5 to-gray-700/5 rounded-full blur-md"></div>
               
               <div className="relative border-2 border-gray-700/50 bg-gray-800/40 rounded-2xl p-6 backdrop-blur-sm shadow-xl hover:shadow-teal-500/10 transition-all duration-300 flex items-center justify-center min-h-[320px]">
                 {!imgError ? (
                   <Image
-                    src="/mechi_mavericks.svg" 
+                    src="/mechimavericks.png" 
                     alt="Mechi Mavericks Logo"
                     width={320}
                     height={320}
