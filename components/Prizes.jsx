@@ -46,8 +46,8 @@ function Prizes() {
     },
     {
       title: "Second Runner Up",
-      gradient: "from-amber-400 via-teal-300 to-amber-500",
-      textColor: "text-gray-900",
+      gradient: "from-amber-500 via-orange-400 to-amber-600",
+      textColor: "text-white",
       items: [
         "Certificate for all the Participants",
         "Recognition",
