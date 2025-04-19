@@ -4,7 +4,7 @@ import { useScramble } from "use-scramble";
 import Countdown from "react-countdown";
 import { useInView } from "react-intersection-observer";
 import Button from "./ui/Button";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 
 function Landing() {
   const url = "https://i.ibb.co/j9vk4vK6/R-min.jpg";
@@ -157,7 +157,7 @@ function Landing() {
         >
           <Button
             text="Registration Form"
-            variant="primary"
+            variant="outline"
             className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => {
               window.open("https://forms.mechimavericks.tech", "_blank");
@@ -165,7 +165,7 @@ function Landing() {
           />
           <Button
             text="Find Us On Facebook"
-            variant="secondary"
+            variant="outline"
             className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => {
               const url = window.location.href;

@@ -139,7 +139,7 @@ const Organized = () => {
               <Button
                 text="Join Community"
                 url="https://discord.gg/QUjqAKUf"
-                variant="secondary"
+                variant="outline"
                 className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white border border-teal-500/30 font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               />
             </div>
