@@ -89,7 +89,7 @@ function SupportedBy() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
             Supported By
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300  max-w-2xl mx-auto">
             We are grateful to our supporters for their generous contributions.
           </p>
         </div>
@@ -98,12 +98,11 @@ function SupportedBy() {
           ref={scrollRef}
           className="overflow-hidden w-full relative mx-auto"
           style={{
-            height: "clamp(100px, 20vw, 180px)",
             maxWidth: "100%",
             margin: "0 auto",
           }}
         >
-          <div className="sponsors-row flex justify-center">
+          <div className=" flex justify-center mx-auto">
             {supportedByList.map((sponsor, index) => (
               <div
                 key={`sponsor-${index}`}
@@ -113,7 +112,7 @@ function SupportedBy() {
                   href={sponsor.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
+                  className="flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
                 >
                   {sponsor.isCircular ? (
                     <div className="bg-white rounded-full flex items-center justify-center w-4/5 h-4/5 p-0">

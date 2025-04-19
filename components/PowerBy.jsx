@@ -89,21 +89,21 @@ function PoweredBy() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
             Event Powered By
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300  max-w-2xl mx-auto">
             We are grateful to our Power for their generous contributions.
           </p>
         </div>
 
         <div
           ref={scrollRef}
-          className="overflow-hidden w-full relative mx-auto"
+          className="overflow-hidden w-full relative "
           style={{
             height: "clamp(160px, 30vw, 300px)",
             maxWidth: "100%",
             margin: "0 auto",
           }}
         >
-          <div className="sponsors-row flex justify-center">
+          <div className=" flex justify-center">
             {supportedByList.map((sponsor, index) => (
               <div
                 key={`sponsor-${index}`}
@@ -115,14 +115,12 @@ function PoweredBy() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-2 sm:mx-3 md:mx-5 lg:mx-6"
                 >
-                  
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
-                      loading="lazy"
-                    />
-                  
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
+                    loading="lazy"
+                  />
                 </a>
               </div>
             ))}
