@@ -135,7 +135,7 @@ function Timeline() {
               </div>
             </motion.div>
 
-            <div className="col-span-12 sm:col-span-8 space-y-6">
+            <div className="col-span-12 sm:col-span-8 space-y-6 text-justify">
               <TimeLineCard
                 title="Registration"
                 date="23 April 2025 - 27st May 2025"

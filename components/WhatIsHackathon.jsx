@@ -54,7 +54,7 @@ function WhatIsCodeWar() {
           <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-justify">
             The event consists of multiple challenging rounds, including
             individual and team-based programming tasks, designed to push
-            participants' logical and analytical thinking. Whether you are
+            participants&apos; logical and analytical thinking. Whether you are
             a beginner or an advanced programmer, CodeWar 1.0 provides a
             platform to showcase your abilities and learn from others in a
             dynamic, competitive environment.
