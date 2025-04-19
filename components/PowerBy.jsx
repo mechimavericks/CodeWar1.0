@@ -1,11 +1,18 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function PoweredBy() {
   const scrollRef = useRef(null);
-  const supportedByList = [
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const PoweredBy = [
     {
-      name: "BCA Association",
+      name: "BCA Association-MMC",
       logo: "https://i.ibb.co/8nyYVwsR/Logo-BCA-Association.png",
       link: "https://bcaassociation.tech/",
       isCircular: false,
@@ -83,51 +90,95 @@ function PoweredBy() {
   }, []);
 
   return (
-    <div className="w-full">
-      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
-            Event Powered By
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300  max-w-2xl mx-auto">
-            We are grateful to our Power for their generous contributions.
-          </p>
-        </div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 md:py-20">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-64 h-64 bg-teal-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl"></div>
+      </div>
 
-        <div
-          ref={scrollRef}
-          className="overflow-hidden w-full relative "
-          style={{
-            height: "clamp(160px, 30vw, 300px)",
-            maxWidth: "100%",
-            margin: "0 auto",
-          }}
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 md:mb-16"
         >
-          <div className=" flex justify-center">
-            {supportedByList.map((sponsor, index) => (
-              <div
-                key={`sponsor-${index}`}
-                className="flex-shrink-0 p-3 sm:p-4 md:p-6 lg:p-8 flex items-center justify-center"
-              >
-                <a
-                  href={sponsor.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-2 sm:mx-3 md:mx-5 lg:mx-6"
-                >
-                  <img
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
-                    loading="lazy"
-                  />
-                </a>
-              </div>
-            ))}
+          <div className="inline-block px-4 py-1.5 rounded-full bg-teal-900/40 text-teal-400 text-sm font-medium border border-teal-700/30 mb-4">
+            Support & Contribution
           </div>
-        </div>
-      </section>
-    </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center">
+            <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+              Event Powered By
+            </span>
+          </h1>
+
+          <div className="h-1.5 w-24 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+
+          <p className="text-gray-300 text-center max-w-2xl mx-auto">
+            We are grateful to our partners for their generous contributions.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative"
+        >
+          <div
+            ref={scrollRef}
+            className="overflow-hidden w-full relative"
+            style={{
+              height: "320px",
+              maxWidth: "100%",
+              margin: "0 auto",
+            }}
+          >
+            <div className="sponsors-row flex justify-center">
+              {PoweredBy.map((sponsor, index) => (
+                <div
+                  key={`sponsor-${index}`}
+                  className="flex-shrink-0 p-3 flex items-center justify-center flex-col"
+                >
+                  <a
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-60 h-48 mx-4 group"
+                  >
+                    <div className="w-full h-full flex items-center justify-center p-5 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-all duration-300 shadow-xl hover:shadow-teal-500/10">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className={`object-contain max-w-full max-h-full ${
+                          sponsor.isCircular ? "rounded-full" : "rounded-lg"
+                        } transition-all duration-300 group-hover:scale-105`}
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                  <motion.div
+                      key={`sponsor-name-${index}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                      className="flex flex-col items-center justify-center mt-4"
+                    >
+                      <span className="text-xl font-medium bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
+                        {sponsor.name}
+                      </span>
+                     </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+        
+       
+      </div>
+    </section>
   );
 }
 

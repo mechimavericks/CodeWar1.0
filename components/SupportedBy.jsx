@@ -1,143 +1,215 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import dynamic from "next/dynamic";
+
+// Dynamically import Carousel with SSR disabled
+const Carousel = dynamic(
+  () => import("react-multi-carousel").then((mod) => mod.default),
+  { ssr: false }
+);
+
+const responsive = {
+  desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
+  tablet: { breakpoint: { max: 1024, min: 640 }, items: 2 },
+  mobile: { breakpoint: { max: 640, min: 0 }, items: 1 },
+};
+
+// Custom arrow components
+const CustomLeftArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-0 sm:left-2 md:left-4 transform -translate-y-1/2 top-1/2 bg-gray-800/80 hover:bg-teal-900/80 text-teal-400 p-2 sm:p-2.5 md:p-3 rounded-full shadow-md border border-teal-500/20 sm:shadow-lg md:shadow-xl z-10 transition-all duration-300"
+    aria-label="Previous"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fillRule="evenodd"
+        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+      />
+    </svg>
+  </button>
+);
+
+const CustomRightArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-0 sm:right-2 md:right-4 transform -translate-y-1/2 top-1/2 bg-gray-800/80 hover:bg-teal-900/80 text-teal-400 p-2 sm:p-2.5 md:p-3 rounded-full shadow-md border border-teal-500/20 sm:shadow-lg md:shadow-xl z-10 transition-all duration-300"
+    aria-label="Next"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+      fill="currentColor"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fillRule="evenodd"
+        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+      />
+    </svg>
+  </button>
+);
 
 function SupportedBy() {
-  const scrollRef = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    setIsMounted(true);
+    import("react-multi-carousel/lib/styles.css");
+  }, []);
+
   const supportedByList = [
     {
       name: "Unity Samaj",
       logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
       link: "https://www.facebook.com/profile.php?id=61558765380070",
       isCircular: true,
+      title: "Community Partner",
     },
+    // Add duplicate entries for demonstration if there's only one supporter
+    {
+      name: "Unity Samaj",
+      logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
+      link: "https://www.facebook.com/profile.php?id=61558765380070",
+      isCircular: true,
+      title: "Community Partner",
+    },
+    {
+      name: "Unity Samaj",
+      logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
+      link: "https://www.facebook.com/profile.php?id=61558765380070",
+      isCircular: true,
+      title: "Community Partner",
+    },
+    // You can add more supporters here
   ];
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    const content = scrollContainer.querySelector(".sponsors-row");
-    if (!content) return;
-
-    const totalWidth = content.scrollWidth;
-    const containerWidth = scrollContainer.clientWidth;
-
-    const handleResize = () => {
-      const currentWidth = scrollContainer.clientWidth;
-
-      if (totalWidth < currentWidth * 1.2) {
-        content.classList.remove("absolute");
-        content.classList.add("mx-auto", "justify-center", "flex-wrap");
-        scrollContainer.classList.add("flex", "justify-center");
-
-        // Remove any cloned content when switching to centered mode
-        const clones = scrollContainer.querySelectorAll(
-          ".sponsors-row:not(:first-child)"
-        );
-        clones.forEach((clone) => clone.remove());
-      } else {
-        content.classList.remove("mx-auto", "justify-center", "flex-wrap");
-        content.classList.add("absolute");
-        scrollContainer.classList.remove("flex", "justify-center");
-
-        // Add clone if needed and not already present
-        if (scrollContainer.querySelectorAll(".sponsors-row").length === 1) {
-          const clone = content.cloneNode(true);
-          scrollContainer.appendChild(clone);
-        }
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Only setup animation if we have enough logos
-    let animationId;
-
-    if (totalWidth >= containerWidth * 1.2) {
-      // Make sure we have a clone for the animation
-      if (scrollContainer.querySelectorAll(".sponsors-row").length === 1) {
-        const clone = content.cloneNode(true);
-        scrollContainer.appendChild(clone);
-      }
-
-      let scrollPos = 0;
-      const scrollSpeed = 0.5;
-
-      const animate = () => {
-        scrollPos += scrollSpeed;
-        if (scrollPos >= totalWidth) {
-          scrollPos = 0;
-        }
-        scrollContainer.scrollLeft = scrollPos;
-        animationId = requestAnimationFrame(animate);
-      };
-
-      animationId = requestAnimationFrame(animate);
-    }
-
-    return () => {
-      if (animationId) cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
-    <div className="w-full">
-      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
-            Supported By
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300  max-w-2xl mx-auto">
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 md:py-20">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-64 h-64 bg-teal-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl"></div>
+      </div>
+      
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <div className="inline-block px-4 py-1.5 rounded-full bg-teal-900/40 text-teal-400 text-sm font-medium border border-teal-700/30 mb-4">
+            Community Support
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center">
+            <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+              Supported By
+            </span>
+          </h1>
+          
+          <div className="h-1.5 w-24 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+          
+          <p className="text-gray-300 text-center max-w-2xl mx-auto">
             We are grateful to our supporters for their generous contributions.
           </p>
-        </div>
+        </motion.div>
 
-        <div
-          ref={scrollRef}
-          className="overflow-hidden w-full relative mx-auto"
-          style={{
-            maxWidth: "100%",
-            margin: "0 auto",
-          }}
-        >
-          <div className=" flex justify-center mx-auto">
-            {supportedByList.map((sponsor, index) => (
-              <div
-                key={`sponsor-${index}`}
-                className="flex-shrink-0 p-2 sm:p-3 md:p-4 lg:p-6 flex items-center justify-center"
-              >
+        {isMounted ? (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative container mx-auto px-2 mt-8"
+          >
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              autoPlay={true}
+              autoPlaySpeed={3000}
+              keyBoardControl={true}
+              customTransition="all 0.8s ease"
+              transitionDuration={800}
+              swipeable={true}
+              draggable={true}
+              showDots={false}
+              arrows={true}
+              customLeftArrow={<CustomLeftArrow />}
+              customRightArrow={<CustomRightArrow />}
+              containerClass="carousel-container py-4"
+              itemClass="px-3 sm:px-4 md:px-6 flex flex-col items-center"
+            >
+              {supportedByList.map((supporter, index) => (
                 <a
-                  href={sponsor.link}
+                  key={`supporter-${index}`}
+                  href={supporter.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 md:w-32 md:h-32 lg:w-40 lg:h-40 mx-1 sm:mx-2 md:mx-4 lg:mx-6"
+                  className="flex flex-col items-center justify-center group"
                 >
-                  {sponsor.isCircular ? (
-                    <div className="bg-white rounded-full flex items-center justify-center w-4/5 h-4/5 p-0">
+                  <div className="w-48 h-48 flex items-center justify-center p-5 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-teal-500/30 transition-all duration-300 shadow-xl hover:shadow-teal-500/10">
+                    {supporter.isCircular ? (
+                      <div className="bg-white rounded-full flex items-center justify-center w-4/5 h-4/5 p-0">
+                        <img
+                          src={supporter.logo}
+                          alt={supporter.name}
+                          className="object-contain max-w-full max-h-full rounded-full transition-all duration-300 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
                       <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="object-contain w-64 rounded-full transition-all duration-300 filter hover:brightness-110"
+                        src={supporter.logo}
+                        alt={supporter.name}
+                        className="object-contain max-w-full max-h-full rounded-lg transition-all duration-300 group-hover:scale-105"
                         loading="lazy"
                       />
-                    </div>
-                  ) : (
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="object-contain w-full h-full rounded-lg shadow-md hover:shadow-xl transition-all duration-300 filter hover:brightness-110"
-                      loading="lazy"
-                    />
-                  )}
+                    )}
+                  </div>
+                  <div className="mt-4 flex flex-col items-center justify-center">
+                    <span className="text-lg font-medium bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
+                      {supporter.name}
+                    </span>
+                    {supporter.title && (
+                      <span className="text-sm text-gray-400 mt-1">
+                        {supporter.title}
+                      </span>
+                    )}
+                  </div>
                 </a>
+              ))}
+            </Carousel>
+          </motion.div>
+        ) : (
+          <div className="flex justify-center py-8">
+            <div className="animate-pulse space-y-8">
+              <div className="flex justify-center space-x-12">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="w-48 h-48 bg-gray-800/50 border border-gray-700/50 rounded-xl"></div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        )}
+      </div>
+    </section>
   );
 }
 
