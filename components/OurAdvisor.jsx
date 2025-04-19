@@ -1,146 +1,104 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-function SupportedBy() {
-  const scrollRef = useRef(null);
+function OurAdvisor() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const ourAdvisorList = [
     {
       name: "Sadhana Panthi",
-      logo: "https://i.ibb.co/2Ysrss2D/491000740-1041868541161950-3756942902193998104-n.png",
+      image: "https://i.ibb.co/2Ysrss2D/491000740-1041868541161950-3756942902193998104-n.png",
       link: "https://www.sadhanapanthi.com.np/",
+      position: "Software Engineer"
     },
     {
       name: "Banshaj Paudel",
-      logo: "https://i.ibb.co/bjf3DRwB/482658870-3114467838706963-7792256541371545998-n.png",
+      image: "https://i.ibb.co/bjf3DRwB/482658870-3114467838706963-7792256541371545998-n.png",
       link: "https://banshaj.com.np/",
+      position: "Tech Advisor"
     },
   ];
 
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    const content = scrollContainer.querySelector(".sponsors-row");
-    if (!content) return;
-
-    const totalWidth = content.scrollWidth;
-    const containerWidth = scrollContainer.clientWidth;
-
-    const handleResize = () => {
-      const currentWidth = scrollContainer.clientWidth;
-
-      if (totalWidth < currentWidth * 1.2) {
-        content.classList.remove("absolute");
-        content.classList.add("mx-auto", "justify-center", "flex-wrap");
-        scrollContainer.classList.add("flex", "justify-center");
-
-        // Remove any cloned content when switching to centered mode
-        const clones = scrollContainer.querySelectorAll(
-          ".sponsors-row:not(:first-child)"
-        );
-        clones.forEach((clone) => clone.remove());
-      } else {
-        content.classList.remove("mx-auto", "justify-center", "flex-wrap");
-        content.classList.add("absolute");
-        scrollContainer.classList.remove("flex", "justify-center");
-
-        // Add clone if needed and not already present
-        if (scrollContainer.querySelectorAll(".sponsors-row").length === 1) {
-          const clone = content.cloneNode(true);
-          scrollContainer.appendChild(clone);
-        }
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    // Only setup animation if we have enough logos
-    let animationId;
-
-    if (totalWidth >= containerWidth * 1.2) {
-      // Make sure we have a clone for the animation
-      if (scrollContainer.querySelectorAll(".sponsors-row").length === 1) {
-        const clone = content.cloneNode(true);
-        scrollContainer.appendChild(clone);
-      }
-
-      let scrollPos = 0;
-      const scrollSpeed = 0.5;
-
-      const animate = () => {
-        scrollPos += scrollSpeed;
-        if (scrollPos >= totalWidth) {
-          scrollPos = 0;
-        }
-        scrollContainer.scrollLeft = scrollPos;
-        animationId = requestAnimationFrame(animate);
-      };
-
-      animationId = requestAnimationFrame(animate);
-    }
-
-    return () => {
-      if (animationId) cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
-    <div className="w-full h-full">
-      <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
-            Our Advisors
-          </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
-            We are grateful to our Advisors for their generous contributions.
-          </p>
-        </div>
-
-        <div
-          ref={scrollRef}
-          className="overflow-hidden w-full relative"
-          style={{
-            height: "auto",
-            maxWidth: "100%",
-            margin: "0 auto",
-            padding: "0 16px",
-          }}
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white py-16 md:py-20">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-64 h-64 bg-teal-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl"></div>
+      </div>
+      
+      <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12 md:mb-16"
         >
-          <div className="sponsors-row flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
-            {ourAdvisorList.map((advisor, index) => (
-              <div
-                key={`advisor-${index}`}
-                className="flex flex-col items-center"
-              >
-                <a
-                  href={advisor.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                    <img
-                      src={advisor.logo}
-                      alt={advisor.name}
-                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                  </div>
-                </a>
-                <div className="text-center mt-3 sm:mt-4">
-                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
-                    {advisor.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
+          <div className="inline-block px-4 py-1.5 rounded-full bg-teal-900/40 text-teal-400 text-sm font-medium border border-teal-700/30 mb-4">
+            Guidance & Expertise
           </div>
-        </div>
-      </section>
-    </div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center">
+            <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+              Our Advisors
+            </span>
+          </h1>
+          
+          <div className="h-1.5 w-24 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+          
+          <p className="text-gray-300 text-center max-w-2xl mx-auto">
+            We are grateful to our advisors for their guidance and expertise.
+          </p>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16 lg:gap-20"
+        >
+          {ourAdvisorList.map((advisor, index) => (
+            <motion.div
+              key={`advisor-${index}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.3 + index * 0.2 }}
+              className="flex flex-col items-center"
+            >
+              <a
+                href={advisor.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
+                <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-teal-500/30 hover:shadow-teal-500/10">
+                  <img
+                    src={advisor.image || advisor.logo}
+                    alt={advisor.name}
+                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+              <div className="text-center mt-4 sm:mt-6">
+                <h3 className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
+                  {advisor.name}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-400 mt-1">
+                  {advisor.position || "Technical Advisor"}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
-export default SupportedBy;
+export default OurAdvisor;
