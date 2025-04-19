@@ -94,9 +94,9 @@ function Sponsors() {
   return (
     <section className="py-6 px-3 sm:px-6 dark:bg-gray-800 dark:text-gray-100">
       <div className="container mx-auto text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-          Our Sponsors
-        </h2>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
+            Our Sponsor
+          </h2>
         <p className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4">
           We are grateful to our sponsors for their generous support.
         </p>

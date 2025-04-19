@@ -69,9 +69,9 @@ function Landing() {
         {/* <h2 className="text-2xl font-bold text-white md:text-4xl">Coming Soon</h2> */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 px-2 sm:px-4">
           <Button
-            text="Registration Opens"
+            text="Registration Form"
             variant="primary"
-            badgeText="Soon"
+            // badgeText="Soon"
             onClick={() => {
               window.open("https://forms.mechimavericks.tech", "_blank");
             }}
@@ -95,24 +95,24 @@ function Landing() {
             }}
           />
         </div>
-        <div className="text-center text-white text-sm sm:text-base mt-2">
-          Application Opens
-        </div>
+        {/* <div className="text-center text-white text-sm sm:text-base mt-2">
+          Application Opensasdf
+        </div> */}
         <div className="flex justify-center w-full px-4">
           <Countdown
             className="text-white"
-            date={new Date("2025-04-23T00:00:00")}
+            date={new Date("2025-05-27T23:59:59")}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (!completed) {
                 return (
                   <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
                     <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center text-white">
-                      {/* Application Closes On */}
-                      Application Opens Soon
+                      Application Closes On
+                      {/* Application Opens Soon */}
                     </h2>
-                    {/* <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+                    <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white text-center">
                       {days}d {hours}h {minutes}m {seconds}s
-                    </h2> */}
+                    </h2>
                   </div>
                 );
               }

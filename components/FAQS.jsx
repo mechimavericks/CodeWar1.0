@@ -284,7 +284,7 @@ function FAQS() {
               </summary>
               <div className="p-4 sm:p-5 pt-0 text-sm sm:text-base text-gray-300">
                 We recommend reviewing common coding problems, algorithms, and
-                data structures. You can also practice coding on platforms like
+                data structures. You can also practice coding on platforms like GeeksForGeeks,
                 LeetCode, HackerRank, or Codeforces to improve your
                 problem-solving skills. It&apos;s also important to collaborate
                 with teammates and practice teamwork.
