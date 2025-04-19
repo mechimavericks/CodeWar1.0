@@ -83,20 +83,20 @@ function SupportedBy() {
       title: "Community Partner",
     },
     // Add duplicate entries for demonstration if there's only one supporter
-    {
-      name: "Unity Samaj",
-      logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
-      link: "https://www.facebook.com/profile.php?id=61558765380070",
-      isCircular: true,
-      title: "Community Partner",
-    },
-    {
-      name: "Unity Samaj",
-      logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
-      link: "https://www.facebook.com/profile.php?id=61558765380070",
-      isCircular: true,
-      title: "Community Partner",
-    },
+    // {
+    //   name: "Unity Samaj",
+    //   logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
+    //   link: "https://www.facebook.com/profile.php?id=61558765380070",
+    //   isCircular: true,
+    //   title: "Community Partner",
+    // },
+    // {
+    //   name: "Unity Samaj",
+    //   logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
+    //   link: "https://www.facebook.com/profile.php?id=61558765380070",
+    //   isCircular: true,
+    //   title: "Community Partner",
+    // },
     // You can add more supporters here
   ];
 
