@@ -143,7 +143,7 @@ function SupportedBy() {
               responsive={responsive}
               infinite={true}
               autoPlay={true}
-              autoPlaySpeed={3000}
+              autoPlaySpeed={2000}
               keyBoardControl={true}
               customTransition="all 0.8s ease"
               transitionDuration={800}
@@ -153,8 +153,9 @@ function SupportedBy() {
               arrows={true}
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}
-              containerClass="carousel-container py-4"
+              containerClass={`carousel-container py-4 ${supportedByList.length <= responsive.desktop.items ? "flex justify-center" : ""}`}
               itemClass="px-3 sm:px-4 md:px-6 flex flex-col items-center"
+              centerMode={supportedByList.length < responsive.desktop.items}
             >
               {supportedByList.map((supporter, index) => (
                 <a
