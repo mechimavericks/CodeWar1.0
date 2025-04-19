@@ -87,7 +87,7 @@ function SupportedBy() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <section className="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-800 to-gray-900 text-white">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">

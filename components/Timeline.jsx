@@ -4,13 +4,13 @@ import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const squareVariants = {
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
   visible: {
-    x: 0,
     opacity: 1,
-    transition: { duration: 1 },
-  },
-  hidden: { opacity: 0, x: 200 },
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
 };
 
 function TimeLineCard({ title, date, description }) {
@@ -31,61 +31,126 @@ function TimeLineCard({ title, date, description }) {
       ref={ref}
       animate={controls}
       initial="hidden"
-      variants={squareVariants}
-      className="square"
+      variants={cardVariants}
+      className="relative"
     >
-      <div className="flex flex-col relative pl-6 sm:pl-0 border-l-2 border-green-700 sm:border-none pb-8 sm:pb-0 sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:dark:bg-violet-400 before:bg-green-700">
-        <h3 className="text-lg sm:text-xl font-semibold tracking-wide">
-          {title}
-        </h3>
-        <time className="text-xs tracking-wide uppercase dark:text-gray-400">
-          {date}
-        </time>
-        <p className="mt-3 text-sm sm:text-base">{description}</p>
+      <div className="flex flex-col relative pl-8 sm:pl-0 border-l-2 border-teal-400/50 sm:border-none pb-10 sm:pb-12">
+        {/* Timeline marker */}
+        <div className="absolute top-0 left-[-8px] sm:left-[-28px] z-10">
+          <div className="w-4 h-4 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 shadow-lg">
+            <div className="absolute inset-0 rounded-full animate-ping opacity-30 bg-teal-400 duration-1000"></div>
+          </div>
+        </div>
+
+        {/* Content card */}
+        <div className="bg-gray-800/70 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50 hover:border-teal-500/30 transition-all duration-300 shadow-xl hover:shadow-teal-500/10">
+          <h3 className="text-xl sm:text-2xl font-bold mb-2">
+            <span className="bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
+              {title}
+            </span>
+          </h3>
+          
+          <time className="inline-block px-3 py-1 bg-teal-900/30 text-teal-300 text-xs font-medium rounded-full mb-4 border border-teal-800/30">
+            {date}
+          </time>
+          
+          <p className="text-gray-300 text-sm sm:text-base">{description}</p>
+        </div>
       </div>
     </motion.div>
   );
 }
 
 function Timeline() {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
-    <div className="overflow-hidden w-full">
-      <div className="flex items-center justify-center w-full dark:bg-gray-800 dark:text-gray-100 p-3 sm:p-5">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold dark:text-white text-center">
-          Event Timeline
-        </h1>
+    <div className="overflow-hidden w-full bg-gradient-to-b from-gray-900 to-gray-800">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-20 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-0 w-40 h-40 bg-teal-600 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-60 h-60 bg-blue-600 rounded-full filter blur-3xl"></div>
       </div>
-      <section className="dark:bg-gray-800 dark:text-gray-100">
-        <div className="container max-w-5xl px-4 py-6 sm:py-12 mx-auto">
-          <div className="grid gap-4 mx-2 sm:mx-4 sm:grid-cols-12">
-            <div className="col-span-12 sm:col-span-3">
-              <div className="text-center sm:text-left mb-8 sm:mb-14 before:block before:w-24 before:h-3 before:mb-3 sm:before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:dark:bg-violet-400 before:bg-green-700">
-                <h3 className="text-2xl sm:text-3xl font-semibold">
-                  Our event timeline
+      
+      {/* Header */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="flex flex-col items-center justify-center w-full p-8 pt-16 relative z-10"
+      >
+        <div className="inline-block px-4 py-1.5 rounded-full bg-teal-900/40 text-teal-400 text-sm font-medium border border-teal-700/30 mb-4">
+          Mark Your Calendar
+        </div>
+        
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center">
+          <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
+            Event Timeline
+          </span>
+        </h1>
+        
+        <div className="h-1.5 w-24 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
+      </motion.div>
+
+      <section className="relative z-10">
+        <div className="container max-w-5xl px-4 py-8 mx-auto">
+          <div className="grid gap-6 mx-2 sm:gap-8 sm:grid-cols-12">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="col-span-12 sm:col-span-4 md:sticky md:top-24" 
+              style={{ height: "fit-content" }}
+            >
+              <div className="text-center sm:text-left mb-8 sm:mb-14">
+                <div className="inline-block w-24 h-1 mb-4 rounded-full bg-gradient-to-r from-teal-500 to-cyan-400"></div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                  Our Journey
                 </h3>
-                <span className="text-xs sm:text-sm font-bold tracking-wide uppercase dark:text-gray-400">
-                  2025
-                </span>
+                <h4 className="text-xl font-semibold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-4">
+                  CodeWar 2025
+                </h4>
+                <p className="text-gray-400 mb-6 text-sm sm:text-base">
+                  Follow our path as we prepare for the ultimate coding showdown.
+                  Mark these key dates in your calendar.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 mr-2"></div>
+                    <span className="text-gray-300 text-sm">Registration Period</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-400 mr-2"></div>
+                    <span className="text-gray-300 text-sm">Team Formation</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 mr-2"></div>
+                    <span className="text-gray-300 text-sm">Main Event</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="relative col-span-12 px-2 sm:px-4 space-y-4 sm:space-y-6 sm:col-span-9">
-              <div className="col-span-12 space-y-8 sm:space-y-12 relative px-0 sm:px-4 sm:col-span-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:dark:bg-gray-700 before:bg-blue-700">
-                <TimeLineCard
-                  title="Registration"
-                  date="23 April 2025 - 27st May 2025"
-                  description="Registration for CodeWar 1.0 opens from April, 2025, until May 27, 2025. This timeframe provides aspiring participants with the opportunity to register for the upcoming event."
-                />
-                <TimeLineCard
-                  title="Formation of Teams"
-                  date="2th June 2025"
-                  description="The team formation will be completed on 02th June, 2025. The formatted teams will be notified via email and need to cooperate during the competition."
-                />
-                <TimeLineCard
-                  title="Main Event"
-                  date="05th - 06th June 2025"
-                  description="The main event will take place on June 05 and 05, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
-                />
-              </div>
+            </motion.div>
+
+            <div className="col-span-12 sm:col-span-8 space-y-6">
+              <TimeLineCard
+                title="Registration"
+                date="23 April 2025 - 27st May 2025"
+                description="Registration for CodeWar 1.0 opens from April, 2025, until May 27, 2025. This timeframe provides aspiring participants with the opportunity to register for the upcoming event."
+              />
+              <TimeLineCard
+                title="Formation of Teams"
+                date="2th June 2025"
+                description="The team formation will be completed on 02th June, 2025. The formatted teams will be notified via email and need to cooperate during the competition."
+              />
+              <TimeLineCard
+                title="Main Event"
+                date="05th - 06th June 2025"
+                description="The main event will take place on June 05 and 05, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
+              />
             </div>
           </div>
         </div>

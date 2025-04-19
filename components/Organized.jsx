@@ -30,7 +30,7 @@ const Organized = () => {
             className="flex justify-center"
           >
             <Image
-              src="/mechi_mavriks.svg"
+              src="/mechi_mavericks.svg"
               alt="Mechi Mavericks Logo"
               width={400}
               height={400}
