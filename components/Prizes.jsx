@@ -88,7 +88,7 @@ function Prizes() {
             <div className="h-1.5 w-24 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
             
             <p className="text-gray-300 text-center max-w-2xl">
-              Please note that the prizes and awards are subject to change as per the event's requirements.
+              Please note that the prizes and awards are subject to change as per the event&apos;s requirements.
             </p>
           </motion.div>
 
