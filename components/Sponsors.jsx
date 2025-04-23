@@ -79,7 +79,7 @@ function Sponsors() {
       name: "Defang.io",
       logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
       link: "https://defang.io/",
-      title: "Technical Partner",
+      title: "Deployment Partner",
     },
     {
       name: "GeeksforGeeks",
