@@ -135,7 +135,7 @@ function Timeline() {
               </div>
             </motion.div>
 
-            <div className="col-span-12 sm:col-span-8 space-y-6">
+            <div className="col-span-12 sm:col-span-8 space-y-6 text-justify">
               <TimeLineCard
                 title="Registration"
                 date="23 April 2025 - 27st May 2025"
@@ -149,7 +149,7 @@ function Timeline() {
               <TimeLineCard
                 title="Main Event"
                 date="05th - 06th June 2025"
-                description="The main event will take place on June 05 and 05, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
+                description="The main event will take place on June 05 and 06, 2025. Registered participants and their teams will compete in the final round, which will be held at Mechi Multiple Campus, Bhadrapur, Jhapa."
               />
             </div>
           </div>
