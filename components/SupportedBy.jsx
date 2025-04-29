@@ -82,22 +82,20 @@ function SupportedBy() {
       isCircular: true,
       title: "Community Partner",
     },
-    // Add duplicate entries for demonstration if there's only one supporter
-    // {
-    //   name: "Unity Samaj",
-    //   logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
-    //   link: "https://www.facebook.com/profile.php?id=61558765380070",
-    //   isCircular: true,
-    //   title: "Community Partner",
-    // },
-    // {
-    //   name: "Unity Samaj",
-    //   logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
-    //   link: "https://www.facebook.com/profile.php?id=61558765380070",
-    //   isCircular: true,
-    //   title: "Community Partner",
-    // },
-    // You can add more supporters here
+    {
+      name: "MMC - B.Sc. CSIT Association",
+      logo: "https://i.ibb.co/hJNvjQrR/csitassociation.png",
+      link: "https://csitassociation.org",
+      isCircular: true,
+      title: "Community Partner",
+    },
+    {
+      name: "BIM - Mechi Multiple Campus",
+      logo: "https://i.ibb.co/hFvSHC5h/bim.png",
+      link: "https://www.facebook.com/profile.php?id=100087511781854",
+      isCircular: true,
+      title: "Community Partner",
+    },
   ];
 
   return (
@@ -107,7 +105,7 @@ function SupportedBy() {
         <div className="absolute top-1/3 right-0 w-64 h-64 bg-teal-600 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600 rounded-full filter blur-3xl"></div>
       </div>
-      
+
       <div ref={ref} className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,22 +116,22 @@ function SupportedBy() {
           <div className="inline-block px-4 py-1.5 rounded-full bg-teal-900/40 text-teal-400 text-sm font-medium border border-teal-700/30 mb-4">
             Community Support
           </div>
-          
+
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-teal-300 via-cyan-200 to-blue-300 bg-clip-text text-transparent">
               Supported By
             </span>
           </h1>
-          
+
           <div className="h-1.5 w-24 bg-gradient-to-r from-teal-500 to-cyan-500 mx-auto rounded-full mb-6"></div>
-          
+
           <p className="text-gray-300 text-center max-w-2xl mx-auto">
             We are grateful to our supporters for their generous contributions.
           </p>
         </motion.div>
 
         {isMounted ? (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -143,19 +141,21 @@ function SupportedBy() {
               responsive={responsive}
               infinite={true}
               autoPlay={true}
-              autoPlaySpeed={2000}
+              autoPlaySpeed={3000} // Increased for smoother transitions
               keyBoardControl={true}
-              customTransition="all 0.8s ease"
-              transitionDuration={800}
+              customTransition="all 0.6s ease" // Slightly faster transition
+              transitionDuration={600}
               swipeable={true}
               draggable={true}
               showDots={false}
               arrows={true}
               customLeftArrow={<CustomLeftArrow />}
               customRightArrow={<CustomRightArrow />}
-              containerClass={`carousel-container py-4 ${supportedByList.length <= responsive.desktop.items ? "flex justify-center" : ""}`}
+              containerClass="carousel-container py-4"
               itemClass="px-3 sm:px-4 md:px-6 flex flex-col items-center"
-              centerMode={supportedByList.length < responsive.desktop.items}
+              centerMode={false} // Remove centerMode
+              removeArrowOnDeviceType={["mobile"]} // Better mobile experience
+              minimumTouchDrag={80} // Prevents accidental swipes
             >
               {supportedByList.map((supporter, index) => (
                 <a
