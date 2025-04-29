@@ -176,18 +176,7 @@ function Landing() {
             variant="outline"
             className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white hover:text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => {
-              const url = window.location.href;
-              if (url.includes("bcaassociation")) {
-                window.open(
-                  "https://www.facebook.com/bcaassociation",
-                  "_blank"
-                );
-              } else {
-                window.open(
-                  "https://www.facebook.com/mechimavericks",
-                  "_blank"
-                );
-              }
+              window.open("https://www.facebook.com/mechimavericks", "_blank");
             }}
           />
         </motion.div>
