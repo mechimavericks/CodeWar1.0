@@ -77,7 +77,7 @@ function Sponsors() {
   const supportedByList = [
     {
       name: "Defang.io",
-      logo: "https://i.ibb.co/Q7hqvDfw/icon-removebg-preview.png",
+      logo: "https://i.ibb.co/v44qpwnL/Defang-io-logo.png",
       link: "https://defang.io/",
       title: "Deployment Partner",
     },
@@ -93,6 +93,17 @@ function Sponsors() {
       link: "https://education.github.com/",
       title: "Education & Community Partner",
     },
+    {
+      name: "Leapfrog Technology Inc.",
+      logo: "https://i.ibb.co/Fk0m5hHJ/leapfrog.png",
+      link: "https://www.lftechnology.com/",
+      title: "Innovation Partner",
+    },{
+      name:"Nepali Blood Donors",
+      logo:"https://i.ibb.co/GBgmbm6/blooddonorsnepal.png",
+      link:"https://nepaliblooddonors.com/",
+      title:"LifeLine Partner"
+    }
   ];
 
   if (supportedByList.length === 0) return null;
