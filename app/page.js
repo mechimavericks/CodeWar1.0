@@ -9,6 +9,7 @@ import WhatIsCodeWar from "@/components/WhatIsHackathon";
 import Organized from "@/components/Organized";
 import OurAdvisor from "@/components/OurAdvisor";
 import PoweredBy from "@/components/PowerBy";
+import SampleQuestions from "@/components/SampleQuestions";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <SupportedBy />
       <OurAdvisor/>
       <WhatIsCodeWar />
+      <SampleQuestions />
       <FAQS />
       <Footer />
     </>
