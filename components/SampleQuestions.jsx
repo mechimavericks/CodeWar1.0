@@ -188,7 +188,7 @@ const SampleQuestions = () => {
             >
               <div className="bg-gray-800/60 backdrop-blur-sm border border-gray-700/40 rounded-lg p-6 shadow-lg">
                 <p className="text-gray-300">
-                  <span className="text-teal-400 font-semibold">Note:</span> During the actual CodeWar event, you'll encounter questions across various difficulty levels from beginner to medium. All questions will test your problem-solving abilities and coding skills.
+                  <span className="text-teal-400 font-semibold">Note:</span> During the actual CodeWar event, you&apos;ll encounter questions across various difficulty levels from beginner to medium. All questions will test your problem-solving abilities and coding skills.
                 </p>
               </div>
             </motion.div>
