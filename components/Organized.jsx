@@ -109,7 +109,7 @@ const Organized = () => {
               <div className="h-1 w-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full mb-4"></div>
               <p className="text-base text-gray-300">
                 Mechi Mavericks is a dynamic community of tech enthusiasts and
-                innovators from Mechi region. We are dedicated to fostering
+                innovators from Mechi Campus. We are dedicated to fostering
                 technological growth and creating opportunities for aspiring
                 developers.
               </p>

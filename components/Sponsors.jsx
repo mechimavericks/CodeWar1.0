@@ -97,8 +97,15 @@ function Sponsors() {
       name: "Leapfrog Technology Inc.",
       logo: "https://i.ibb.co/Fk0m5hHJ/leapfrog.png",
       link: "https://www.lftechnology.com/",
-      title: "Innovation Partner",
-    },{
+      title: "Technology Partner",
+    },
+    {
+      name: "Programiz",
+      logo: "https://i.ibb.co/Cp4ftk1h/programiz.png",
+      link:"https://www.programiz.com/",
+      title:"E-Learning Partner"
+    },
+    {
       name:"Nepali Blood Donors",
       logo:"https://i.ibb.co/GBgmbm6/blooddonorsnepal.png",
       link:"https://nepaliblooddonors.com/",
