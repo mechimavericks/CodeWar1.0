@@ -110,6 +110,12 @@ function Sponsors() {
       logo:"https://i.ibb.co/GBgmbm6/blooddonorsnepal.png",
       link:"https://nepaliblooddonors.com/",
       title:"LifeLine Partner"
+    },
+    {
+      name:"Bridge International",
+      logo:"https://i.ibb.co/20PzRMQK/bridge.png",
+      link:"https://bridgeint.co.uk/",
+      title:"Abroad Study partner"
     }
   ];
 
