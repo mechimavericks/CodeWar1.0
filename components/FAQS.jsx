@@ -70,7 +70,7 @@ function FAQS() {
                 </span>
               </summary>
               <div className="p-5 sm:p-6 pt-0 text-base sm:text-lg text-gray-300 border-t border-gray-700/50">
-                CodeWar 1.0 is a coding competition exclusively for BCA students
+                CodeWar 1.0 is a coding competition exclusively for the students
                 at Mechi Multiple Campus. It aims to promote problem-solving and
                 coding skills through challenging coding problems, teamwork, and
                 innovative thinking.
