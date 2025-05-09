@@ -187,9 +187,14 @@ function Prizes() {
                       Kharaayo Proleap
                     </a>
                   </h3>
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    Secret Kharaayo Merch Packs for the Top 5 teams, delivered as a surprise reward during the final ceremony.
-                  </p>
+                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 rounded-full border border-teal-500/30 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span className="font-bold bg-gradient-to-r from-teal-300 to-cyan-200 bg-clip-text text-transparent">
+                      Up to <span className="text-xl text-pink-400">5</span> Teams
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
