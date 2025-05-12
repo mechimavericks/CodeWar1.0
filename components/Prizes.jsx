@@ -39,7 +39,7 @@ function Prizes() {
       gradient: "from-cyan-200 via-blue-300 to-cyan-400",
       textColor: "text-gray-900",
       items: [
-        "Programiz Pro for  1 Year",
+        "Programiz Pro for 1 Year",
         "Canva Pro for 1 Year",
         "Stickers for participants",
         "Certificate for all the Participants",
