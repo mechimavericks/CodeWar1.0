@@ -24,7 +24,7 @@ function Prizes() {
       gradient: "from-yellow-300 via-teal-200 to-yellow-500",
       textColor: "text-gray-900",
       items: [
-        "Fellowship Program from Kharaayo Proleap",
+        "Fellowship Program from Kharaayo Inc.",
         "Exciting Swags & Gifts for Winner",
         "Defang Pro for 1 Year",
         "Stickers for participants",
@@ -39,9 +39,11 @@ function Prizes() {
       gradient: "from-cyan-200 via-blue-300 to-cyan-400",
       textColor: "text-gray-900",
       items: [
+        "Programiz Pro for  1 Year",
+        "Canva Pro for 1 Year",
+        "Stickers for participants",
         "Certificate for all the Participants",
         "Special Recognition",
-        "Stickers for participants",
         "Exciting Gifts"
       ],
       delay: 0.2
@@ -51,9 +53,10 @@ function Prizes() {
       gradient: "from-amber-500 via-orange-400 to-amber-600",
       textColor: "text-white",
       items: [
+        "Canva Pro for 1 Year",
+        "Stickers for participants",
         "Certificate for all the Participants",
         "Recognition",
-        "Stickers for participants",
         "Participation Gifts"
       ],
       delay: 0.4
@@ -184,7 +187,7 @@ function Prizes() {
                       rel="noopener noreferrer"
                       className="text-pink-400 hover:text-pink-300 transition-colors duration-300 underline decoration-dotted underline-offset-2 font-semibold"
                     >
-                      Kharaayo Proleap
+                      Kharaayo Inc.
                     </a>
                   </h3>
                   <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 rounded-full border border-teal-500/30 shadow-lg">
