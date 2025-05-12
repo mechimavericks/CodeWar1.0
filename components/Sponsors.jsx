@@ -88,6 +88,12 @@ function Sponsors() {
       title: "Learning Partner",
     },
     {
+      name: "Kharaayo Inc.",
+      logo: "https://i.ibb.co/0xhLPSF/kharaayoinc.png",
+      link: "https://kharaayo.com/",
+      title: "Career Growth Partner",
+    },
+    {
       name: "GitHub Education",
       logo: "https://i.ibb.co/ynrmNS6V/github-6980894-1280.png",
       link: "https://education.github.com/",
