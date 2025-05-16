@@ -155,30 +155,61 @@ function Landing() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 px-2 sm:px-4 mt-2 md:mt-4"
         >
-          <Button
-            text="Registration Form"
-            variant="outline"
-            className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => {
+          <a
+            href="https://forms.mechimavericks.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative overflow-hidden group bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/40 transition-all duration-300 flex items-center border border-teal-400/30"
+            onClick={(e) => {
+              e.preventDefault();
               window.open("https://forms.mechimavericks.tech", "_blank");
             }}
-          />
-          <Button
-            text="Event Rules"
-            variant="secondary"
-            className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => {
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
+            <span className="absolute -inset-1 bg-teal-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              Registration Form
+            </span>
+          </a>
+          
+          <a
+            href="https://shorturl.at/wYY3d"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/40 transition-all duration-300 flex items-center border border-cyan-400/30"
+            onClick={(e) => {
+              e.preventDefault();
               window.open("https://shorturl.at/wYY3d", "_blank");
             }}
-          />
-          <Button
-            text="Find Us On Facebook"
-            variant="outline"
-            className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white hover:text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => {
-              window.open("https://www.facebook.com/mechimavericks", "_blank");
-            }}
-          />
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
+            <span className="absolute -inset-1 bg-cyan-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Event Rules
+            </span>
+          </a>
+          
+          <a
+            href="https://practice.geeksforgeeks.org/contest/codewar-10"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative overflow-hidden group bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-blue-500/40 transition-all duration-300 flex items-center border border-blue-400/30"
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400/20 to-indigo-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
+            <span className="absolute -inset-1 bg-blue-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              Event Page
+            </span>
+          </a>
         </motion.div>
 
         {/* Countdown timer */}
