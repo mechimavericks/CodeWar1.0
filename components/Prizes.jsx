@@ -24,11 +24,13 @@ function Prizes() {
       gradient: "from-yellow-300 via-teal-200 to-yellow-500",
       textColor: "text-gray-900",
       items: [
+        "Fellowship Program from Kharaayo Inc.",
+        "Exciting Swags & Gifts for Winner",
+        "Defang Pro for 1 Year",
+        "Stickers for participants",
         "Certificate for all the Participants",
         "Special Recognition for Winner",
-        "Stickers for participants",
-        "Exciting Swags & Gifts for Winner",
-        "Defang Pro for 1 Year"
+
       ],
       delay: 0
     },
@@ -37,9 +39,11 @@ function Prizes() {
       gradient: "from-cyan-200 via-blue-300 to-cyan-400",
       textColor: "text-gray-900",
       items: [
+        "Programiz Pro for 1 Year",
+        "Canva Pro for 1 Year",
+        "Stickers for participants",
         "Certificate for all the Participants",
         "Special Recognition",
-        "Stickers for participants",
         "Exciting Gifts"
       ],
       delay: 0.2
@@ -49,9 +53,10 @@ function Prizes() {
       gradient: "from-amber-500 via-orange-400 to-amber-600",
       textColor: "text-white",
       items: [
+        "Canva Pro for 1 Year",
+        "Stickers for participants",
         "Certificate for all the Participants",
         "Recognition",
-        "Stickers for participants",
         "Participation Gifts"
       ],
       delay: 0.4
@@ -152,6 +157,51 @@ function Prizes() {
               ))}
             </div>
           </div>
+          
+          {/* Exclusive Merchandise Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 max-w-4xl mx-auto px-4"
+          >
+            <div className="bg-gradient-to-br from-gray-800/90 to-gray-900/90 border border-teal-500/20 rounded-xl p-8 backdrop-blur-sm shadow-xl relative overflow-hidden">
+              {/* Background glow effect */}
+              <div className="absolute -top-16 -right-16 w-32 h-32 bg-teal-500/20 rounded-full filter blur-3xl"></div>
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-cyan-500/20 rounded-full filter blur-2xl"></div>
+              
+              <div className="flex flex-col md:flex-row items-center gap-6 relative z-10">
+                {/* Icon */}
+                <div className="p-4 rounded-full bg-gradient-to-br from-teal-500/30 to-cyan-500/20 border border-teal-400/30 shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
+                    Exclusive Merchandise from{" "}
+                    <a 
+                      href="https://kharaayo.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-pink-400 hover:text-pink-300 transition-colors duration-300 underline decoration-dotted underline-offset-2 font-semibold"
+                    >
+                      Kharaayo Inc.
+                    </a>
+                  </h3>
+                  <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 rounded-full border border-teal-500/30 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span className="font-bold bg-gradient-to-r from-teal-300 to-cyan-200 bg-clip-text text-transparent">
+                      Up to <span className="text-xl text-pink-400">5</span> Teams
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </section>
       </div>
     </div>
