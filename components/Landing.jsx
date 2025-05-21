@@ -156,13 +156,13 @@ function Landing() {
           className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 px-2 sm:px-4 mt-2 md:mt-4"
         >
           <a
-            href="https://forms.mechimavericks.tech"
+            href="https://forms.gle/Rn4oSxgKH881VXW4A"
             target="_blank"
             rel="noopener noreferrer"
             className="relative overflow-hidden group bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/40 transition-all duration-300 flex items-center border border-teal-400/30"
             onClick={(e) => {
               e.preventDefault();
-              window.open("https://forms.mechimavericks.tech", "_blank");
+              window.open("https://forms.gle/Rn4oSxgKH881VXW4A", "_blank");
             }}
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
