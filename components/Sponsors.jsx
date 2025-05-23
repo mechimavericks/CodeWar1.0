@@ -107,7 +107,7 @@ function Sponsors() {
     },
     {
       name: "Programiz",
-      logo: "https://i.ibb.co/Cp4ftk1h/programiz.png",
+      logo: "https://i.ibb.co/KxFn9Lpg/programiz.png",
       link:"https://www.programiz.com/",
       title:"E-Learning Partner"
     },
