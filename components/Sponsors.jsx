@@ -89,7 +89,7 @@ function Sponsors() {
     },
     {
       name: "Kharaayo Inc.",
-      logo: "https://i.ibb.co/0xhLPSF/kharaayoinc.png",
+      logo: "https://i.ibb.co/C5KyvKnx/kharaayo.png",
       link: "https://kharaayo.com/",
       title: "Career Growth Partner",
     },
