@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 function Landing() {
   const url = "https://i.ibb.co/j9vk4vK6/R-min.jpg";
+  const [isRegistrationClosed, setIsRegistrationClosed] = useState(false);
 
   const { ref, replay } = useScramble({
     text: "CODEWAR 1.0",
@@ -32,6 +33,13 @@ function Landing() {
       replays();
     }
   }, [inView, replay, replays]);
+
+  // Check if registration is closed on component mount
+  useEffect(() => {
+    const deadlineDate = new Date("2025-05-28T23:59:59");
+    const now = new Date();
+    setIsRegistrationClosed(now > deadlineDate);
+  }, []);
 
   return (
     <div
@@ -155,25 +163,27 @@ function Landing() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 px-2 sm:px-4 mt-2 md:mt-4"
         >
-          <a
-            href="https://forms.gle/Rn4oSxgKH881VXW4A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative overflow-hidden group bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/40 transition-all duration-300 flex items-center border border-teal-400/30"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open("https://forms.gle/Rn4oSxgKH881VXW4A", "_blank");
-            }}
-          >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
-            <span className="absolute -inset-1 bg-teal-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <span className="relative flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-              </svg>
-              Registration Form
-            </span>
-          </a>
+          {!isRegistrationClosed && (
+            <a
+              href="https://forms.gle/Rn4oSxgKH881VXW4A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden group bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/40 transition-all duration-300 flex items-center border border-teal-400/30"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://forms.gle/Rn4oSxgKH881VXW4A", "_blank");
+              }}
+            >
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
+              <span className="absolute -inset-1 bg-teal-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                Registration Form
+              </span>
+            </a>
+          )}
           
           <a
             href="https://shorturl.at/wYY3d"
@@ -221,7 +231,8 @@ function Landing() {
         >
           <Countdown
             className="text-white"
-            date={new Date("2025-05-27T23:59:59")}
+            date={new Date("2025-05-28T23:59:59")}
+            onComplete={() => setIsRegistrationClosed(true)}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (!completed) {
                 return (
@@ -267,6 +278,72 @@ function Landing() {
                       ))}
                     </div>
                   </div>
+                );
+              }
+              else{
+                return (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center relative"
+                  >
+                    {/* Background glow effect */}
+                    <div className="absolute -inset-8 bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 rounded-full blur-2xl opacity-60"></div>
+                    
+                    {/* Main content */}
+                    <div className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-xl p-8 border border-teal-500/30 shadow-2xl">
+                      {/* Icon */}
+                      <div className="flex justify-center mb-6">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-teal-500/30 rounded-full blur-lg animate-pulse"></div>
+                          <div className="relative p-4 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-full border border-teal-400/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+                        <span className="bg-gradient-to-r from-teal-300 via-cyan-300 to-blue-400 bg-clip-text text-transparent">
+                          Registration Closed
+                        </span>
+                      </h2>
+
+                      {/* Subtitle */}
+                      <div className="space-y-3 mb-6">
+                        <p className="text-gray-300 text-lg font-medium">
+                          Thank you for your interest in{" "}
+                          <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent font-bold">
+                            CODEWAR 1.0
+                          </span>
+                        </p>
+                        <p className="text-gray-400 text-sm">
+                          The registration period has ended. Stay tuned for future events!
+                        </p>
+                      </div>
+
+                      {/* Decorative line */}
+                      <div className="h-1 w-24 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 mx-auto rounded-full mb-4"></div>
+
+                      {/* Footer message */}
+                      <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 rounded-full border border-teal-500/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <a 
+                          href="https://discord.gg/AGxmYRyWFN" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-teal-300 text-sm font-medium hover:text-teal-200 transition-colors duration-200"
+                        >
+                          Join Discord for updates on future events
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
                 );
               }
               return null;
