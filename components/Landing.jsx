@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 function Landing() {
   const url = "https://i.ibb.co/j9vk4vK6/R-min.jpg";
   const [isRegistrationClosed, setIsRegistrationClosed] = useState(false);
+  const deadlineDate = new Date("2025-05-28T23:59:59");
 
   const { ref, replay } = useScramble({
     text: "CODEWAR 1.0",
@@ -36,7 +37,6 @@ function Landing() {
 
   // Check if registration is closed on component mount
   useEffect(() => {
-    const deadlineDate = new Date("2025-05-28T23:59:59");
     const now = new Date();
     setIsRegistrationClosed(now > deadlineDate);
   }, []);
@@ -231,7 +231,7 @@ function Landing() {
         >
           <Countdown
             className="text-white"
-            date={new Date("2025-05-28T23:59:59")}
+            date={deadlineDate}
             onComplete={() => setIsRegistrationClosed(true)}
             renderer={({ days, hours, minutes, seconds, completed }) => {
               if (!completed) {
