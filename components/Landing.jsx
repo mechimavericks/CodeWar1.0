@@ -298,6 +298,7 @@ function Landing() {
                 );
               }
               else{
+                return null
                 return (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
