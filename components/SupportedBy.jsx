@@ -76,6 +76,13 @@ function SupportedBy() {
 
   const supportedByList = [
     {
+      name: "FSU - Mechi Multiple Campus",
+      logo: "https://i.ibb.co/Q7hsXsh2/88e6e0cd-a91e-4bc2-a9c6-9cfd7d401c28.jpg",
+      link: "https://www.facebook.com/fsu.mechi",
+      isCircular: true,
+      title: "Key Supporter",
+    },
+    {
       name: "Unity Samaj",
       logo: "https://i.ibb.co/pj7kb0hk/unitysamaj.png",
       link: "https://www.facebook.com/profile.php?id=61558765380070",
