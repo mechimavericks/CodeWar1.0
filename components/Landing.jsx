@@ -163,28 +163,28 @@ function Landing() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="flex flex-wrap justify-center gap-4 sm:gap-5 md:gap-6 px-2 sm:px-4 mt-2 md:mt-4"
         >
+          {!isRegistrationClosed && (
+            <a
+              href="https://forms.gle/Rn4oSxgKH881VXW4A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden group bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/40 transition-all duration-300 flex items-center border border-teal-400/30"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://forms.gle/Rn4oSxgKH881VXW4A", "_blank");
+              }}
+            >
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
+              <span className="absolute -inset-1 bg-teal-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
+                Registration Form
+              </span>
+            </a>
+          )}
           {/* {!isRegistrationClosed && (
-            // <a
-            //   href="https://forms.gle/Rn4oSxgKH881VXW4A"
-            //   target="_blank"
-            //   rel="noopener noreferrer"
-            //   className="relative overflow-hidden group bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-teal-500/40 transition-all duration-300 flex items-center border border-teal-400/30"
-            //   onClick={(e) => {
-            //     e.preventDefault();
-            //     window.open("https://forms.gle/Rn4oSxgKH881VXW4A", "_blank");
-            //   }}
-            // >
-            //   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
-            //   <span className="absolute -inset-1 bg-teal-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            //   <span className="relative flex items-center">
-            //     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-            //     </svg>
-            //     Registration Form
-            //   </span>
-            // </a>
-          )} */}
-          {isRegistrationClosed && (
             <a
                 href="https://practice.geeksforgeeks.org/contest/codewar-10"
                 target="_blank"
@@ -200,27 +200,8 @@ function Landing() {
                   Register Here
                 </span>
               </a>
-          )}
+          )} */}
           
-          <a
-            href="https://shorturl.at/wYY3d"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/40 transition-all duration-300 flex items-center border border-cyan-400/30"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open("https://shorturl.at/wYY3d", "_blank");
-            }}
-          >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-md group-hover:opacity-75 transition-opacity duration-300 opacity-0"></span>
-            <span className="absolute -inset-1 bg-cyan-500/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <span className="relative flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Event Rules
-            </span>
-          </a>
           
           <a
             href="https://practice.geeksforgeeks.org/contest/codewar-10"
@@ -298,7 +279,6 @@ function Landing() {
                 );
               }
               else{
-                return null
                 return (
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.8 }}
