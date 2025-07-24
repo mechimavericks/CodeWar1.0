@@ -10,6 +10,7 @@ import Organized from "@/components/Organized";
 import OurAdvisor from "@/components/OurAdvisor";
 import PoweredBy from "@/components/PowerBy";
 import SampleQuestions from "@/components/SampleQuestions";
+import EventLeads from "@/components/EventLeads";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Prizes />
       <Organized />
       <Sponsors />
+      <EventLeads />
       <PoweredBy/>
       <SupportedBy />
       <OurAdvisor/>
