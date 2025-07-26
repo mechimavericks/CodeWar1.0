@@ -19,8 +19,8 @@ export default function Home() {
       <Timeline />
       <Prizes />
       <Organized />
-      <Sponsors />
       <EventLeads />
+      <Sponsors />
       <PoweredBy/>
       <SupportedBy />
       <OurAdvisor/>
